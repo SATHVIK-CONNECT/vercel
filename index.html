@@ -42,7 +42,7 @@
           }
         }
         section {
-          @apply md:py-20 px-5 rounded-2xl pb-20 md:pb-10;
+          @apply md:py-20 py-4 px-5 rounded-2xl pb-20 md:pb-10;
         }
         #certificates {
           figure {
@@ -79,7 +79,7 @@
           ul {
             li {
               a {
-                @apply p-3 px-5 hover:bg-gray-600/30 hover:ease-linear hover:duration-500 text-white rounded-3xl text-xs md:text-lg flex items-center gap-2;
+                @apply p-2 px-5 hover:bg-gray-600/30 hover:ease-linear hover:duration-500 text-white rounded-3xl text-xs md:text-lg flex items-center gap-2;
               }
               a {
                 p {
@@ -123,7 +123,7 @@
             @apply px-5 py-3 flex flex-col;
           }
           figure {
-            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 min-w-80;
+            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 min-w-65;
           }
           a {
             @apply px-3 py-1 bg-white rounded-3xl text-black font-bold mt-5 text-center hover:opacity-80 ease-in duration-200;
@@ -205,7 +205,7 @@
                 class="bg-sky-500 text-white px-4 py-2 text-sm rounded-3xl font-bold"
                 >Say Hello</a
               >
-              <a href="https://sathvik.streamlit.app" class="link"
+              <a href="https://github.com/SATHVIK-CONNECT" class="link"
                 ><i class="fa-brands fa-github"></i
               ></a>
               <a href="https://www.linkedin.com/in/sathvikpalivela/" class="link"
@@ -222,7 +222,7 @@
             </nav>
           </div>
           <div class="flex flex-col gap-4">
-            <h1 class="text-center text-xl font-bold">Skills</h1>
+            <h1 class="text-center text-md font-bold"><span class="text-sky-500">Sk</span>ills</h1>
             <!-- <br /> -->
             <ul class="flex-center flex-wrap">
               <li>
@@ -298,7 +298,10 @@
       </section>
 
       <section id="certificates">
-        <h1 class="text-center text-md font-bold">Certification and Achievements</h1>
+        <h1 class="text-center text-md font-bold">
+          <span class="text-sky-500">Certifi</span>cations and
+          <span class="text-sky-500">Achieve</span>ments
+        </h1>
         <br />
         <article class="flex gap-10 flex-wrap justify-center">
           <figure id="card">
@@ -359,7 +362,7 @@
       </section>
 
       <section id="projects">
-        <h1 class="text-center text-md font-bold">Projects</h1>
+        <h1 class="text-center text-md font-bold"><span class="text-sky-500">Pro</span>jects</h1>
         <br />
         <article class="flex gap-10 flex-wrap justify-center">
           <figure id="card">
@@ -444,9 +447,14 @@
             </figcaption>
           </figure>
         </article>
+        <!-- <h3
+          class="text-center text-md font-bold bg-gray-500/30 text-white mt-5 rounded-full px-2 py-1"
+        >
+          More
+        </h3> -->
       </section>
       <section id="events">
-        <h1 class="text-center text-md font-bold">Events</h1>
+        <h1 class="text-center text-md font-bold"><span class="text-sky-500">Eve</span>nts</h1>
         <br />
         <article class="flex gap-10 overflow-x-scroll">
           <figure id="card">
@@ -489,9 +497,48 @@
         </article>
       </section>
       <section id="contact">
-        <h1 class="text-center text-md font-bold">Contact</h1>
+        <h1 class="text-center text-md font-bold">Contact <span class="text-sky-500">Me</span></h1>
         <br />
-        <article class="flex gap-10 flex-wrap justify-center"></article>
+        <article class="flex gap-10 flex-wrap justify-center">
+          <form class="flex flex-col gap-3 items-center justify-center" method="POST">
+            <input
+              class="border border-white rounded-lg w-full p-2"
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="email"
+              class="border border-white rounded-lg w-full p-2"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              class="border border-white rounded-lg w-full p-2"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <div class="flex w-full gap-4">
+              <button
+                type="reset"
+                onclick=""
+                class="bg-gray-500/30 text-white font-bold text-xs w-[50%] p-2 rounded-full"
+              >
+                Clear&emsp; <i class="fa-solid fa-trash"></i>
+              </button>
+              <button
+                type="button"
+                onclick=""
+                class="bg-white text-black font-bold text-xs w-[50%] p-2 rounded-full"
+              >
+                Send&emsp; <i class="fa-solid fa-share"></i>
+              </button>
+            </div>
+          </form>
+        </article>
       </section>
     </main>
     <script>
