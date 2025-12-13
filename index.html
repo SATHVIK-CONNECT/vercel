@@ -27,14 +27,14 @@
           }
         }
         section {
-          @apply py-10 md:py-20 px-5 rounded-2xl pb-20 md:pb-10;
+          @apply md:py-20 px-5 rounded-2xl pb-20 md:pb-10;
         }
         #certificates {
           figure {
-            @apply flex md:flex-col gap-3 border border-gray-800 rounded-xl overflow-hidden md:w-100 md:h-120 w-full h-50;
+            @apply flex md:flex-col gap-3 border border-gray-800 rounded-xl overflow-hidden md:w-100 md:h-120 w-full h-35;
           }
           img {
-            @apply w-40 object-contain md:object-fill md:h-80 md:w-full  bg-white;
+            @apply w-20 object-contain md:object-fill md:h-80 md:w-full  bg-white;
           }
         }
         #certificates {
@@ -43,12 +43,15 @@
               @apply font-semibold text-sm mb-1;
             }
             p {
-              @apply text-xs;
+              @apply text-xs text-justify;
             }
 
             figcaption {
-              @apply px-4 py-2;
+              @apply px-1.5 py-1;
             }
+          }
+          figure {
+            @apply gap-1;
           }
         }
         #about {
@@ -70,7 +73,10 @@
         #projects {
           figcaption {
             h3 {
-              @apply font-bold my-2 text-lg;
+              @apply font-bold my-2 text-sm;
+            }
+            p {
+              @apply text-xs;
             }
           }
           figcaption {
@@ -80,7 +86,7 @@
             @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100;
           }
           a {
-            @apply px-5 py-2 bg-white rounded-3xl text-black font-bold mt-2 text-center;
+            @apply px-5 py-2 bg-white rounded-3xl text-black font-bold mt-5 text-center;
           }
         }
       }
@@ -135,7 +141,7 @@
               <a
                 href="#contact"
                 id="hello"
-                class="bg-sky-500 text-white px-4 py-1 text-sm rounded-3xl font-bold"
+                class="bg-sky-500 text-white px-4 py-2 text-sm rounded-3xl font-bold"
                 >Say Hello</a
               >
               <a href="https://sathvik.streamlit.app" id="link"></a>
@@ -220,16 +226,16 @@
       </section>
 
       <section id="certificates">
-        <h1 class="text-center text-xl font-bold">Certification and Achievements</h1>
+        <h1 class="text-center text-md font-bold">Certification and Achievements</h1>
         <br />
         <article class="flex gap-10 flex-wrap justify-center">
           <figure id="card">
             <img src="edx.jpg" />
             <figcaption class="px-4 py-2">
-              <h3 class="font-semibold text-lg mb-1">Introduction to Computer Science - EdX</h3>
+              <h3>Introduction to Computer Science</h3>
               <p>
-                Learned fundamental concepts of programming and algorithms. Developed
-                problem-solving skills through hands-on coding exercises.
+                Learned fundamental concepts of programming & algorithms. Developed problem-solving
+                skills through hands-on coding exercises.
               </p>
             </figcaption>
           </figure>
@@ -259,7 +265,7 @@
           <figure id="card">
             <img src="edunet.jpg" />
             <figcaption class="">
-              <h3>Applied Artificial Intelligence - Edunet Foundation</h3>
+              <h3>Applied Artificial Intelligence</h3>
               <p>
                 Explored machine learning models and neural networks. Implemented AI solutions for
                 predictive analytics.
@@ -270,7 +276,7 @@
           <figure id="card">
             <img src="oa.jpg" />
             <figcaption>
-              <h3>MERN Stack - Ocean Apps</h3>
+              <h3>MERN Stack</h3>
               <p>
                 Developed full-stack web applications using MongoDB, Express, React, and Node.js.
                 Created scalable and responsive user interfaces.
@@ -281,18 +287,20 @@
       </section>
 
       <section id="projects">
-        <h1 class="text-center text-xl font-bold">Projects</h1>
+        <h1 class="text-center text-md font-bold">Projects</h1>
         <br />
         <article class="flex gap-10 flex-wrap justify-center">
           <figure id="card">
             <img src="Spark.jpg" />
             <figcaption id="desc">
-              <h3>Spark AI -Streamlit</h3>
+              <h3>Spark AI - Streamlit</h3>
               <p>
                 An AI-powered chatbot for interacting with images and PDFs. Utilizes natural
                 language processing for seamless conversations.
               </p>
-              <a href="https://sathvik.streamlit.app">Click Here</a>
+              <a href="https://sathvik.streamlit.app"
+                >Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i
+              ></a>
             </figcaption>
           </figure>
 
@@ -304,6 +312,7 @@
                 A quiz application developed with Django framework. Features user authentication and
                 score tracking.
               </p>
+              <a href="">Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i></a>
             </figcaption>
           </figure>
 
@@ -315,7 +324,10 @@
                 An e-commerce platform mimicking Flipkart's features. Includes product listings,
                 cart, and payment integration.
               </p>
-              <a href="https://flipkart-backend-q9yh.onrender.com/">Click Here<i class=""></i></a>
+
+              <a href="https://flipkart-backend-q9yh.onrender.com/"
+                >Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i
+              ></a>
             </figcaption>
           </figure>
 
@@ -327,6 +339,8 @@
                 A conversational AI for customer support. Integrated with cloud services for
                 scalability.
               </p>
+
+              <a href="">Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i></a>
             </figcaption>
           </figure>
 
@@ -338,7 +352,10 @@
                 AI model for identifying tree species from images. Uses computer vision and machine
                 learning algorithms.
               </p>
-              <a href="https://sih-bley43d1q-sathviks-projects-2923d827.vercel.app/">Click Here</a>
+
+              <a href="https://sih-bley43d1q-sathviks-projects-2923d827.vercel.app/"
+                >Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i
+              ></a>
             </figcaption>
           </figure>
 
@@ -350,6 +367,8 @@
                 A virtual agent for practicing interview skills. Provides feedback based on
                 responses and performance.
               </p>
+
+              <a href="">Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i></a>
             </figcaption>
           </figure>
         </article>
