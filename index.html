@@ -23,7 +23,7 @@
       @layer base {
         section {
           li {
-            @apply px-3  bg-white text-black font-bold text-center rounded-2xl flex flex-col justify-center items-center;
+            @apply px-4 py-1 bg-white text-black text-xs font-bold text-center rounded-2xl flex flex-col justify-center items-center;
           }
         }
         section {
@@ -61,7 +61,7 @@
           ul {
             li {
               a {
-                @apply p-3 px-5 hover:bg-gray-500/20 text-white rounded-3xl text-sm md:text-lg;
+                @apply p-3 px-5 hover:bg-gray-500/20 text-white rounded-3xl text-xs md:text-lg;
               }
             }
           }
@@ -96,7 +96,9 @@
     <header
       class="flex h-15 justify-between items-center fixed md:top-0 bottom-0 w-full px-5 bg-black border-b border-gray-900"
     >
-      <h1 class="text-xl font-bold hidden md:block">Sathvik's Portfolio</h1>
+      <h1 class="font-bold hidden md:block">
+        Sathvik's <span clas="text-sky-500">Portfolio</span>
+      </h1>
       <nav class="w-full md:w-auto">
         <ul class="flex gap-2 text-md font-semibold text-md w-full justify-evenly md:">
           <li>
@@ -111,20 +113,20 @@
         </ul>
       </nav>
     </header>
-    <header class="w-full h-15 bg-black md:hidden text-2xl font-bold p-5 text-sky-500">
+    <header class="w-full h-15 bg-black md:hidden text-lg font-bold p-5 text-sky-500">
       Sathvik's <span class="text-white">Portfolio</span>
     </header>
     <main>
       <section id="about" class="">
         <article class="flex flex-wrap md:flex-nowrap gap-10">
           <div>
-            <h2 class="font-bold text-5xl">Hello,</h2>
-            <h2 class="text-5xl font-bold mb-2">
+            <h2 class="font-bold text-3xl">Hello,</h2>
+            <h2 class="text-3xl font-bold mb-2">
               I'm
-              <span class="text-sky-500 font-bold text-5xl">Sathvik Palivela</span>
+              <span class="text-sky-500 font-bold text-3xl">Sathvik Palivela</span>
             </h2>
-            <b class="text-2xl"> Web Developer | AI/ML Enthusiast</b>
-            <p class="mb-5 mt-1 text-justify">
+            <b class="text-md"> Web Developer | AI/ML Enthusiast</b>
+            <p class="mb-5 mt-1 text-justify text-md">
               I'm a Computer Science student passionate about building intelligent systems and
               crafting clean, scalable solutions. I develop full-stack web projects, explore machine
               learning models, and create automation tools that solve real-world problems.
@@ -133,7 +135,7 @@
               <a
                 href="#contact"
                 id="hello"
-                class="bg-sky-500 text-white px-5 py-2 rounded-3xl font-bold"
+                class="bg-sky-500 text-white px-4 py-1 text-sm rounded-3xl font-bold"
                 >Say Hello</a
               >
               <a href="https://sathvik.streamlit.app" id="link"></a>
