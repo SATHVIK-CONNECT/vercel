@@ -11,13 +11,23 @@
       body {
         color: white;
       }
+
       ::-webkit-scrollbar {
         visibility: hidden;
         width: 0;
       }
+
       @layer component {
         .card {
           @apply w-50 h-20 font-bold bg-white text-center rounded flex flex-col justify-center items-center;
+        }
+        .active {
+          @apply bg-white text-black ease-in duration-500;
+        }
+        .active {
+          p {
+            display: block;
+          }
         }
       }
       @layer base {
@@ -64,7 +74,12 @@
           ul {
             li {
               a {
-                @apply p-3 px-5 hover:bg-gray-500/20 text-white rounded-3xl text-xs md:text-lg;
+                @apply p-3 px-5 hover:bg-gray-600/30 hover:ease-linear hover:duration-500 text-white rounded-3xl text-xs md:text-lg flex items-center gap-2;
+              }
+              a {
+                p {
+                  @apply hidden md:block font-bold text-xs;
+                }
               }
             }
           }
@@ -86,7 +101,27 @@
             @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100;
           }
           a {
-            @apply px-5 py-2 bg-white rounded-3xl text-black font-bold mt-5 text-center;
+            @apply px-5 py-2 bg-white rounded-3xl text-black font-bold mt-5 text-center hover:opacity-80 ease-in duration-200;
+          }
+        }
+
+        #events {
+          figcaption {
+            h3 {
+              @apply font-bold my-2 text-sm;
+            }
+            p {
+              @apply text-xs;
+            }
+          }
+          figcaption {
+            @apply px-5 py-3 flex flex-col;
+          }
+          figure {
+            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 min-w-80;
+          }
+          a {
+            @apply px-3 py-1 bg-white rounded-3xl text-black font-bold mt-5 text-center hover:opacity-80 ease-in duration-200;
           }
         }
       }
@@ -100,21 +135,42 @@
   </head>
   <body class="bg-black">
     <header
-      class="flex h-15 justify-between items-center fixed md:top-0 bottom-0 w-full px-5 bg-black border-b border-gray-900"
+      class="flex h-15 justify-between items-center fixed md:top-0 bottom-[-5px] w-full px-5 bg-black border-b border-gray-900"
     >
       <h1 class="font-bold hidden md:block">
         Sathvik's <span clas="text-sky-500">Portfolio</span>
       </h1>
-      <nav class="w-full md:w-auto">
-        <ul class="flex gap-2 text-md font-semibold text-md w-full justify-evenly md:">
+      <nav class="w-full md:w-auto overflow-scroll pt-2">
+        <ul class="flex text-md font-semibold text-md w-full justify-evenly md:">
           <li>
-            <a href="#about" class=""><i class="fa-solid fa-home"></i>&emsp;Home</a>
+            <a href="#about" class="active nav"
+              ><i class="fa-solid fa-home"></i>
+              <p>Home</p></a
+            >
           </li>
           <li>
-            <a href="#certificates"><i class="fa-solid fa-trophy"></i>&emsp;Certs</a>
+            <a href="#certificates" class="nav"
+              ><i class="fa-solid fa-trophy"></i>
+              <p>Certificates</p>
+            </a>
           </li>
           <li>
-            <a href="#projects"><i class="fa-solid fa-briefcase"></i>&emsp;Work</a>
+            <a href="#projects" class="nav"
+              ><i class="fa-solid fa-briefcase"></i>
+              <p>Work</p></a
+            >
+          </li>
+          <li>
+            <a href="#events" class="nav"
+              ><i class="fa-solid fa-clipboard-check"></i>
+              <p>Events</p></a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav"
+              ><i class="fa-solid fa-user"></i>
+              <p>Contact</p></a
+            >
           </li>
         </ul>
       </nav>
@@ -230,18 +286,18 @@
         <br />
         <article class="flex gap-10 flex-wrap justify-center">
           <figure id="card">
-            <img src="edx.jpg" />
+            <img src="https://ik.imagekit.io/sathvik/src/edx.jpg" loading="lazy" />
             <figcaption class="px-4 py-2">
               <h3>Introduction to Computer Science</h3>
               <p>
-                Learned fundamental concepts of programming & algorithms. Developed problem-solving
-                skills through hands-on coding exercises.
+                Learned fundamental concepts of programming and algorithms. Developed
+                problem-solving skills through hands-on coding exercises.
               </p>
             </figcaption>
           </figure>
 
           <figure id="card">
-            <img src="forage.png" />
+            <img src="https://ik.imagekit.io/sathvik/src/forage.png" loading="lazy" />
             <figcaption>
               <h3>Data Analytics - Forage Deloitte</h3>
               <p>
@@ -252,7 +308,7 @@
           </figure>
 
           <figure id="card">
-            <img src="edx.jpg" />
+            <img src="https://ik.imagekit.io/sathvik/src/edx.jpg" loading="lazy" />
             <figcaption>
               <h3>Python and JavaScript - EdX</h3>
               <p>
@@ -263,7 +319,7 @@
           </figure>
 
           <figure id="card">
-            <img src="edunet.jpg" />
+            <img src="https://ik.imagekit.io/sathvik/src/edunet.jpg" loading="lazy" />
             <figcaption class="">
               <h3>Applied Artificial Intelligence</h3>
               <p>
@@ -274,7 +330,7 @@
           </figure>
 
           <figure id="card">
-            <img src="oa.jpg" />
+            <img src="https://ik.imagekit.io/sathvik/src/oa.jpg" loading="lazy" />
             <figcaption>
               <h3>MERN Stack</h3>
               <p>
@@ -291,7 +347,7 @@
         <br />
         <article class="flex gap-10 flex-wrap justify-center">
           <figure id="card">
-            <img src="Spark.jpg" />
+            <img src="https://ik.imagekit.io/sathvik/src/Spark.jpg" loading="lazy" />
             <figcaption id="desc">
               <h3>Spark AI - Streamlit</h3>
               <p>
@@ -299,25 +355,25 @@
                 language processing for seamless conversations.
               </p>
               <a href="https://sathvik.streamlit.app"
-                >Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i
+                >Click Here&emsp;<i class="fa-solid fa-arrow-right"></i
               ></a>
             </figcaption>
           </figure>
 
           <figure id="card">
-            <img src="Quiz.avif" />
+            <img src="https://ik.imagekit.io/sathvik/src/Quiz.avif" loading="lazy" />
             <figcaption>
               <h3>Achieve - Django</h3>
               <p>
                 A quiz application developed with Django framework. Features user authentication and
                 score tracking.
               </p>
-              <a href="">Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i></a>
+              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
             </figcaption>
           </figure>
 
           <figure id="card">
-            <img src="Flip.webp" />
+            <img src="https://ik.imagekit.io/sathvik/src/Flip.webp" loading="lazy" />
             <figcaption>
               <h3>Flipkart Clone - MERN</h3>
               <p class="">
@@ -326,13 +382,13 @@
               </p>
 
               <a href="https://flipkart-backend-q9yh.onrender.com/"
-                >Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i
+                >Click Here&emsp;<i class="fa-solid fa-arrow-right"></i
               ></a>
             </figcaption>
           </figure>
 
           <figure id="card">
-            <img src="Chatbot.webp" />
+            <img src="https://ik.imagekit.io/sathvik/src/Chatbot.webp" loading="lazy" />
             <figcaption>
               <h3>Chatbot - IBM</h3>
               <p>
@@ -340,12 +396,12 @@
                 scalability.
               </p>
 
-              <a href="">Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i></a>
+              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
             </figcaption>
           </figure>
 
           <figure id="card">
-            <img src="Farma.jpg" />
+            <img src="https://ik.imagekit.io/sathvik/src/farma.png" loading="lazy" />
             <figcaption>
               <h3>Farma AI</h3>
               <p>
@@ -354,13 +410,13 @@
               </p>
 
               <a href="https://sih-bley43d1q-sathviks-projects-2923d827.vercel.app/"
-                >Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i
+                >Click Here&emsp;<i class="fa-solid fa-arrow-right"></i
               ></a>
             </figcaption>
           </figure>
 
           <figure id="card">
-            <img src="Training.png" />
+            <img src="https://ik.imagekit.io/sathvik/src/Training.png" loading="lazy" />
             <figcaption>
               <h3>Interview Trainer Agent - IBM</h3>
               <p>
@@ -368,11 +424,59 @@
                 responses and performance.
               </p>
 
-              <a href="">Click Here&emsp;<i class="fa-solid fa-circle-arrow-right"></i></a>
+              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
             </figcaption>
           </figure>
         </article>
       </section>
+      <section id="events">
+        <h1 class="text-center text-md font-bold">Events</h1>
+        <br />
+        <article class="flex gap-10 overflow-x-scroll">
+          <figure id="card">
+            <img src="https://ik.imagekit.io/sathvik/src/Training.png" loading="lazy" />
+            <figcaption>
+              <h3>Interview Trainer Agent - IBM</h3>
+              <p>
+                A virtual agent for practicing interview skills. Provides feedback based on
+                responses and performance.
+              </p>
+
+              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
+            </figcaption>
+          </figure>
+          <figure id="card">
+            <img src="https://ik.imagekit.io/sathvik/src/Training.png" loading="lazy" />
+            <figcaption>
+              <h3>Interview Trainer Agent - IBM</h3>
+              <p>
+                A virtual agent for practicing interview skills. Provides feedback based on
+                responses and performance.
+              </p>
+
+              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
+            </figcaption>
+          </figure>
+        </article>
+      </section>
+      <section id="contact">
+        <h1 class="text-center text-md font-bold">Contact</h1>
+        <br />
+        <article class="flex gap-10 flex-wrap justify-center"></article>
+      </section>
     </main>
+    <script>
+      const navs = document.querySelectorAll(".nav");
+
+      navs.forEach((nav) => {
+        nav.addEventListener("click", (e) => {
+          navs.forEach((nav) => {
+            nav.classList.remove("active");
+            nav.style.transition = "0.3s";
+          });
+          nav.classList.add("active");
+        });
+      });
+    </script>
   </body>
 </html>
