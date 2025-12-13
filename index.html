@@ -23,7 +23,7 @@
       @layer base {
         section {
           li {
-            @apply px-5 py-1 bg-white text-black font-bold text-center rounded-2xl flex flex-col justify-center items-center;
+            @apply px-3  bg-white text-black font-bold text-center rounded-2xl flex flex-col justify-center items-center;
           }
         }
         section {
@@ -34,17 +34,20 @@
             @apply flex md:flex-col gap-3 border border-gray-800 rounded-xl overflow-hidden md:w-100 md:h-120 w-full h-50;
           }
           img {
-            @apply w-40 object-contain md:object-fill md:h-80 md:w-full  bg-[#131313];
+            @apply w-40 object-contain md:object-fill md:h-80 md:w-full  bg-white;
           }
         }
         #certificates {
           figure {
             h3 {
-              @apply font-semibold text-lg mb-1;
+              @apply font-semibold text-sm mb-1;
+            }
+            p {
+              @apply text-xs;
             }
 
             figcaption {
-              @apply px-4 py-2 text-justify;
+              @apply px-4 py-2;
             }
           }
         }
@@ -58,11 +61,12 @@
           ul {
             li {
               a {
-                @apply p-3 px-5 hover:bg-gray-500/20 text-white focus:bg-gray-500/20 rounded-3xl;
+                @apply p-3 px-5 hover:bg-gray-500/20 text-white rounded-3xl text-sm md:text-lg;
               }
             }
           }
         }
+
         #projects {
           figcaption {
             h3 {
@@ -219,7 +223,7 @@
         <article class="flex gap-10 flex-wrap justify-center">
           <figure id="card">
             <img src="edx.jpg" />
-            <figcaption class="px-4 py-2 text-justify">
+            <figcaption class="px-4 py-2">
               <h3 class="font-semibold text-lg mb-1">Introduction to Computer Science - EdX</h3>
               <p>
                 Learned fundamental concepts of programming and algorithms. Developed
