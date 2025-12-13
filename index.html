@@ -29,6 +29,11 @@
             display: block;
           }
         }
+        .link {
+          i {
+            @apply p-2 min-w-5 h-full text-black bg-white rounded-full;
+          }
+        }
       }
       @layer base {
         section {
@@ -193,16 +198,27 @@
               crafting clean, scalable solutions. I develop full-stack web projects, explore machine
               learning models, and create automation tools that solve real-world problems.
             </p>
-            <nav>
+            <nav class="flex gap-3 items-center">
               <a
                 href="#contact"
                 id="hello"
                 class="bg-sky-500 text-white px-4 py-2 text-sm rounded-3xl font-bold"
                 >Say Hello</a
               >
-              <a href="https://sathvik.streamlit.app" id="link"></a>
-              <a href="https://sathvik.streamlit.app" id="link"></a>
-              <a href="https://sathvik.streamlit.app" id="link"></a>
+              <a href="https://sathvik.streamlit.app" class="link"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/sathvikpalivela/" class="link"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://www.facebook.com/sathvik.Palivela.77" class="link"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://www.hackerrank.com/profile/sathvikpalivela0" class="link"
+                ><i class="fa-brands fa-hackerrank"></i></a
+              ><a href="https://learn.microsoft.com/en-in/users/sathvikpalivela-5018/" class="link"
+                ><i class="fa-brands fa-microsoft"></i
+              ></a>
             </nav>
           </div>
           <div class="flex flex-col gap-4">
@@ -434,26 +450,39 @@
         <br />
         <article class="flex gap-10 overflow-x-scroll">
           <figure id="card">
-            <img src="https://ik.imagekit.io/sathvik/src/Training.png" loading="lazy" />
+            <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" loading="lazy" />
             <figcaption>
-              <h3>Interview Trainer Agent - IBM</h3>
-              <p>
-                A virtual agent for practicing interview skills. Provides feedback based on
-                responses and performance.
+              <h3>Microsoft Ai Tour</h3>
+              <p class="text-justify">
+                The Microsoft AI Tour in Bengaluru was an event that emphasized India's crucial role
+                in global AI innovation, featuring keynotes from CEO Satya Nadella and hands-on
+                workshops on building AI solutions and Copilots.
               </p>
 
               <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
             </figcaption>
           </figure>
           <figure id="card">
-            <img src="https://ik.imagekit.io/sathvik/src/Training.png" loading="lazy" />
+            <img src="https://ik.imagekit.io/sathvik/eve-sih.jpeg" loading="lazy" />
             <figcaption>
-              <h3>Interview Trainer Agent - IBM</h3>
-              <p>
-                A virtual agent for practicing interview skills. Provides feedback based on
-                responses and performance.
+              <h3>Smart India Hackathon</h3>
+              <p class="text-justify">
+                The Smart India Hackathon (SIH) is a nationwide initiative for students to solve
+                real-world problem statements provided by various government ministries and
+                industries.
               </p>
-
+              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
+            </figcaption>
+          </figure>
+          <figure id="card">
+            <img src="https://ik.imagekit.io/sathvik/eve-rbi.avif" loading="lazy" />
+            <figcaption>
+              <h3>RBI 90 Quiz</h3>
+              <p class="text-justify">
+                The RBI 90 Quiz was a multi-stage, nationwide general knowledge competition for
+                undergraduate students organized by the Reserve Bank of India to commemorate its
+                90th anniversary.
+              </p>
               <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
             </figcaption>
           </figure>
