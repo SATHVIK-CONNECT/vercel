@@ -1,0 +1,19 @@
+/* src/input.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import your custom component styles */
+@import "./components/buttons.css";
+@import "./components/cards.css";
+
+body {
+  height: 100vh;
+}
+
+@layer component {
+  .card {
+    @apply w-100 h-100 flex justify-center items-center bg-gray-400 px-5 py-3 rounded;
+  }
+}

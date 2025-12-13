@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+    sans-serif;
+  hr {
+    border: none;
+    background: rgb(229, 222, 222);
+    height: 1px;
+    border-radius: 10px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
+::-webkit-scrollbar {
+  visibility: hidden;
+  width: 0;
+}
+body {
+  height: 100vh;
+  width: 100%;
+}
+section {
+  padding: min(5vw, 0px);
+}
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: white;
+  position: fixed;
+  top: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  ul {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+}
+ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+section {
+  width: 100%;
+  border: 1px solid;
+  justify-content: center;
+}
+h1 {
+  text-align: center;
+  /* font-size: clamp(30px, 2vw, 50px); */
+}
+article {
+  display: flex;
+  margin: 20px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 60px;
+  column-gap: 5px;
+  flex-wrap: wrap;
+}
+div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+
+header {
+  h1 {
+    font-size: clamp(20px, 2vw, 30px);
+  }
+  li {
+    font-size: clamp(16px, 1.5vw, 20px);
+  }
+}
+
+#about {
+  article {
+    flex-wrap: wrap;
+    div {
+      /* justify-content: center; */
+      width: min(600px, 90vw);
+      #hello {
+        width: min(20vw, 200px);
+        font-size: clamp(15px, 1.5vw, 20px);
+      }
+      #link {
+        width: min(50px, 7vw);
+        height: min(50px, 7vw);
+        border-radius: 50%;
+        background: #aa00ff;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        /* justify-content: center; */
+      }
+
+      b {
+        font-size: clamp(1em, 3vw, 30px);
+        border: 1px solid red;
+      }
+      p {
+        font-size: clamp(1em, 2.5vw, 25px);
+        text-align: justify;
+      }
+      ul {
+        li {
+          min-width: min(150px, 5vw);
+          /* min-width: 150px; */
+          font-size: clamp(8px, 2vw, 18px);
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+#about {
+  h2 {
+    font-size: clamp(50px, 5vw, 100px);
+    letter-spacing: 4px;
+    span {
+      color: #aa00ff;
+    }
+  }
+  b {
+    font-size: 30px;
+  }
+  p {
+    font-size: 25px;
+  }
+  #hello {
+    background: #aa00ff;
+    color: #fff;
+    width: 30%;
+    padding: 15px 20px;
+    font-size: larger;
+    margin: 30px 0px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  article {
+    div {
+      gap: 5px;
+      height: 90%;
+      ul {
+        margin: 10px;
+        li {
+          width: 30%;
+          padding: 20px;
+          background: #aa00ff;
+          color: #fff;
+          font-weight: bolder;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          hr {
+            background: white;
+            height: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#projects,
+#certificates {
+  article {
+    /* border: 1px solid red; */
+    flex-wrap: wrap;
+    #card {
+      width: min(500px, 50em);
+      /* width: min(30vw, 500px);*/
+      height: 500px;
+      /* height: min(40vh, 50em);  */
+      border-radius: 25px;
+      /* border: 1px solid red; */
+      border: 1px solid rgb(205, 201, 201);
+      overflow: hidden;
+      justify-content: start;
+      gap: 10px;
+      padding-bottom: 20px;
+      img {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+      }
+      figcaption {
+        height: 30%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        a {
+          width: 30%;
+          background: #aa00ff;
+          color: white;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.react {
+  width: 50%;
+}
+.nosql {
+  width: 70%;
+}
+.flask {
+  width: 40%;
+}
