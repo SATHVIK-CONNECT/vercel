@@ -1,10 +1,11 @@
+<!-- Changes in sm-nav names and icons -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sathvik Palivela</title>
-    <!-- <link rel="stylesheet" href="styles.css" /> -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://kit.fontawesome.com/98243d2037.js" crossorigin="anonymous"></script>
     <style type="text/tailwindcss">
@@ -44,7 +45,7 @@
         section {
           @apply md:py-20 py-4 px-5 rounded-2xl pb-20 md:pb-10;
         }
-        #certificates {
+        #section2 {
           figure {
             @apply flex md:flex-col gap-3 border border-gray-800 rounded-xl overflow-hidden md:w-100 md:h-120 w-full h-35;
           }
@@ -52,7 +53,7 @@
             @apply w-20 object-contain md:object-fill md:h-80 md:w-full  bg-white;
           }
         }
-        #certificates {
+        #section2 {
           figure {
             h3 {
               @apply font-semibold text-sm mb-1;
@@ -69,7 +70,7 @@
             @apply gap-1;
           }
         }
-        #about {
+        #section1 {
           div {
             @apply py-2;
           }
@@ -90,7 +91,7 @@
           }
         }
 
-        #projects {
+        #section3 {
           figcaption {
             h3 {
               @apply font-bold my-2 text-sm;
@@ -110,7 +111,7 @@
           }
         }
 
-        #events {
+        #section4 {
           figcaption {
             h3 {
               @apply font-bold my-2 text-sm;
@@ -145,37 +146,37 @@
       <h1 class="font-bold hidden md:block">
         Sathvik's <span clas="text-sky-500">Portfolio</span>
       </h1>
-      <nav class="w-full md:w-auto overflow-scroll pt-2">
+      <nav id="navbar" class="w-full md:w-auto overflow-scroll pt-2">
         <ul class="flex text-md font-semibold text-md w-full justify-evenly md:">
           <li>
-            <a href="#about" class="active nav"
+            <a href="#section1" class="active nav"
               ><i class="fa-solid fa-home"></i>
               <p>Home</p></a
             >
           </li>
           <li>
-            <a href="#certificates" class="nav"
-              ><i class="fa-solid fa-trophy"></i>
-              <p>Certificates</p>
+            <a href="#section2" class="nav"
+              ><p>Certificates</p>
+              <i class="fa-solid fa-trophy"></i>
             </a>
           </li>
           <li>
-            <a href="#projects" class="nav"
+            <a href="#section3" class="nav"
               ><i class="fa-solid fa-briefcase"></i>
               <p>Work</p></a
             >
           </li>
           <li>
-            <a href="#events" class="nav"
-              ><i class="fa-solid fa-clipboard-check"></i>
-              <p>Events</p></a
-            >
+            <a href="#section4" class="nav"
+              ><p>Events</p>
+              <i class="fa-solid fa-clipboard-check"></i>
+            </a>
           </li>
           <li>
-            <a href="#contact" class="nav"
-              ><i class="fa-solid fa-user"></i>
-              <p>Contact</p></a
-            >
+            <a href="#section5" class="nav"
+              ><p>Contact</p>
+              <i class="fa-solid fa-user"></i>
+            </a>
           </li>
         </ul>
       </nav>
@@ -184,7 +185,7 @@
       Sathvik's <span class="text-white">Portfolio</span>
     </header>
     <main>
-      <section id="about" class="">
+      <section id="section1" class="">
         <article class="flex flex-wrap md:flex-nowrap gap-10">
           <div>
             <h2 class="font-bold text-3xl">Hello,</h2>
@@ -200,7 +201,7 @@
             </p>
             <nav class="flex gap-3 items-center">
               <a
-                href="#contact"
+                href="#section1"
                 id="hello"
                 class="bg-sky-500 text-white px-4 py-2 text-sm rounded-3xl font-bold"
                 >Say Hello</a
@@ -215,8 +216,9 @@
                 ><i class="fa-brands fa-facebook"></i
               ></a>
               <a href="https://www.hackerrank.com/profile/sathvikpalivela0" class="link"
-                ><i class="fa-brands fa-hackerrank"></i></a
-              ><a href="https://learn.microsoft.com/en-in/users/sathvikpalivela-5018/" class="link"
+                ><i class="fa-brands fa-hackerrank"></i
+              ></a>
+              <a href="https://learn.microsoft.com/en-in/users/sathvikpalivela-5018/" class="link"
                 ><i class="fa-brands fa-microsoft"></i
               ></a>
             </nav>
@@ -297,7 +299,7 @@
         </article>
       </section>
 
-      <section id="certificates">
+      <section id="section2">
         <h1 class="text-center text-md font-bold">
           <span class="text-sky-500">Certifi</span>cations and
           <span class="text-sky-500">Achieve</span>ments
@@ -361,7 +363,7 @@
         </article>
       </section>
 
-      <section id="projects">
+      <section id="section3">
         <h1 class="text-center text-md font-bold"><span class="text-sky-500">Pro</span>jects</h1>
         <br />
         <article class="flex gap-10 flex-wrap justify-center">
@@ -453,7 +455,7 @@
           More
         </h3> -->
       </section>
-      <section id="events">
+      <section id="section4">
         <h1 class="text-center text-md font-bold"><span class="text-sky-500">Eve</span>nts</h1>
         <br />
         <article class="flex gap-10 overflow-x-scroll">
@@ -496,13 +498,13 @@
           </figure>
         </article>
       </section>
-      <section id="contact">
-        <h1 class="text-center text-md font-bold">Contact <span class="text-sky-500">Me</span></h1>
+      <section id="section5">
+        <h1 class="text-center text-md font-bold">Contact <span class="text-sky-500"> Me</span></h1>
         <br />
         <article class="flex gap-10 flex-wrap justify-center">
           <form class="flex flex-col gap-3 items-center justify-center" method="POST">
             <input
-              class="border border-white rounded-lg w-full p-2"
+              class="border border-white rounded-lg w-full p-2 text-xs"
               type="text"
               name="name"
               placeholder="Your Name"
@@ -510,14 +512,14 @@
             />
             <input
               type="email"
-              class="border border-white rounded-lg w-full p-2"
+              class="border border-white rounded-lg w-full p-2 text-xs"
               name="email"
               placeholder="Your Email"
               required
             />
             <textarea
               name="message"
-              class="border border-white rounded-lg w-full p-2"
+              class="border border-white rounded-lg w-full p-2 text-xs"
               placeholder="Your Message"
               required
             ></textarea>
@@ -553,6 +555,30 @@
           nav.classList.add("active");
         });
       });
+
+      const sections = document.querySelectorAll("section[id]");
+      window.addEventListener("scroll", navHighlighter);
+      function navHighlighter() {
+        let scrollY = window.pageYOffset;
+        sections.forEach((current) => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 500;
+          const sectionId = current.getAttribute("id");
+          let scrollHeight = document.documentElement.scrollHeight;
+          let clientHeight = document.documentElement.clientHeight;
+
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelector(`#navbar a[href="#${sectionId}"]`).classList.add("active");
+          } else {
+            document.querySelector(`#navbar a[href="#${sectionId}"]`).classList.remove("active");
+          }
+
+          // End Section
+          // if (scrollY + clientHeight >= scrollHeight) {
+          //   document.querySelector("#navbar a[href=#section5}]").classList.add("active");
+          // }
+        });
+      }
     </script>
   </body>
 </html>
