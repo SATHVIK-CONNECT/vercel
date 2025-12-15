@@ -1,5 +1,3 @@
-<!-- Changes in sm-nav names and icons -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,147 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sathvik Palivela</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" href="icon.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/98243d2037.js" crossorigin="anonymous"></script>
     <style type="text/tailwindcss">
-      body {
-        color: white;
+      html {
+        scroll-behavior: smooth;
       }
-
       ::-webkit-scrollbar {
         visibility: hidden;
         width: 0;
       }
-
       @layer component {
         .card {
           @apply w-50 h-20 font-bold bg-white text-center rounded flex flex-col justify-center items-center;
         }
         .active {
-          @apply bg-white text-black ease-in duration-500;
-        }
-        .active {
+          @apply bg-white text-black hover:ease-in hover:duration-500;
+          /* duration-500 -> onclick */
           p {
-            display: block;
+            @apply block;
           }
+        }
+        .active2 {
+          @apply bg-white text-black;
         }
         .link {
           i {
-            @apply p-2 min-w-5 h-full text-black bg-white rounded-full;
+            @apply p-1.5 md:p-2.5 text-black bg-white rounded-full text-xl;
           }
+        }
+        .mobile-header {
+          @apply w-full h-15 bg-black md:hidden text-lg font-bold p-5 text-sky-500 z-1;
+        }
+        .laptop-header {
+          @apply flex h-15 justify-between items-center fixed md:top-0 bottom-[-5px] w-full px-5 bg-black border-b border-gray-900 z-1;
+        }
+        .open {
+          @apply px-5 py-2 bg-white w-30 rounded-3xl text-black font-bold mt-5 text-center hover:opacity-80 hover:ease-in hover:duration-200 md:text-[15px] flex justify-center items-center;
         }
       }
-      @layer base {
-        section {
-          li {
-            @apply px-4 py-1 bg-white text-black text-xs font-bold text-center rounded-2xl flex flex-col justify-center items-center;
-          }
-        }
-        section {
-          @apply md:py-20 py-4 px-5 rounded-2xl pb-20 md:pb-10;
-        }
-        #section2 {
-          figure {
-            @apply flex md:flex-col gap-3 border border-gray-800 rounded-xl overflow-hidden md:w-100 md:h-120 w-full h-35;
-          }
-          img {
-            @apply w-20 object-contain md:object-fill md:h-80 md:w-full  bg-white;
-          }
-        }
-        #section2 {
-          figure {
-            h3 {
-              @apply font-semibold text-sm mb-1;
-            }
-            p {
-              @apply text-xs text-justify;
-            }
-
-            figcaption {
-              @apply px-1.5 py-1;
-            }
-          }
-          figure {
-            @apply gap-1;
-          }
-        }
-        #section1 {
-          div {
-            @apply py-2;
-          }
-        }
-
-        nav {
-          ul {
-            li {
-              a {
-                @apply p-2 px-5 hover:bg-gray-600/30 hover:ease-linear hover:duration-500 text-white rounded-3xl text-xs md:text-lg flex items-center gap-2;
-              }
-              a {
-                p {
-                  @apply hidden md:block font-bold text-xs;
-                }
-              }
-            }
-          }
-        }
-
-        #section3 {
-          figcaption {
-            h3 {
-              @apply font-bold my-2 text-sm;
-            }
-            p {
-              @apply text-xs;
-            }
-          }
-          figcaption {
-            @apply px-5 py-3 flex flex-col;
-          }
-          figure {
-            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100;
-          }
-          a {
-            @apply px-5 py-2 bg-white rounded-3xl text-black font-bold mt-5 text-center hover:opacity-80 ease-in duration-200;
-          }
-        }
-
-        #section4 {
-          figcaption {
-            h3 {
-              @apply font-bold my-2 text-sm;
-            }
-            p {
-              @apply text-xs;
-            }
-          }
-          figcaption {
-            @apply px-5 py-3 flex flex-col;
-          }
-          figure {
-            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 min-w-65;
-          }
-          a {
-            @apply px-3 py-1 bg-white rounded-3xl text-black font-bold mt-5 text-center hover:opacity-80 ease-in duration-200;
-          }
-        }
-      }
-
       @layer utilities {
         .flex-center {
           @apply flex gap-4 justify-center items-center;
         }
       }
+      @layer base {
+        section {
+          @apply pt-10 md:pt-20 py-4 px-5 rounded-2xl md:pb-10 md:px-20;
+          li {
+            @apply px-4 py-1 bg-white text-black text-xs font-bold text-center rounded-2xl flex flex-col justify-center items-center;
+          }
+          h1 {
+            @apply text-center font-bold;
+          }
+        }
+        figure {
+          p {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        }
+        header {
+          h1 {
+            @apply font-bold hidden md:block;
+          }
+          nav {
+            @apply w-full md:w-auto;
+            ul {
+              @apply flex font-semibold justify-evenly md:gap-2;
+              li {
+                a {
+                  @apply px-4 py-2 hover:bg-gray-500/30 hover:ease-in hover:duration-300 text-white rounded-3xl  flex items-center gap-2 text-xs md:text-sm md:font-normal md:gap-2.5;
+                  p {
+                    @apply hidden md:block font-bold;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      #section1 {
+        @apply md:pt-35;
+        article {
+          @apply flex flex-wrap md:flex-nowrap gap-10;
+          h2 {
+            @apply font-bold text-3xl md:text-5xl;
+          }
+        }
+        div {
+          @apply py-2 select-none;
+          div {
+            ul {
+              li {
+                @apply md:text-sm md:rounded-full md:px-5 md:font-semibold;
+                span {
+                  @apply flex justify-center items-center;
+                }
+              }
+            }
+          }
+        }
+      }
+      #section2 {
+        nav {
+          @apply px-1.5 flex h-12 items-center gap-2 overflow-scroll md:hidden bg-gray-500/10 rounded-full text-xs;
+          a {
+            @apply min-w-25 font-bold p-2 ml-0.5 rounded-full text-center;
+          }
+        }
+        article {
+          @apply flex gap-10 flex-wrap md:flex-nowrap justify-center md:justify-start md:overflow-x-scroll rounded-xl;
+          figure {
+            @apply flex justify-center border border-gray-500/30 rounded-xl overflow-hidden md:flex-col md:min-w-100 md:min-h-120 md:items-center md:justify-start;
+            img {
+              @apply min-w-20 w-20 h-full object-contain bg-white md:w-[100%] md:h-[60%];
+            }
+            figcaption {
+              @apply px-3 py-2 overflow-hidden;
+              h3 {
+                @apply font-bold text-sm md:text-lg;
+              }
+              p {
+                @apply text-xs mt-1 md:text-[16px];
+              }
+              div {
+                @apply mt-4 overflow-x-scroll flex gap-3 py-2 md:flex-wrap;
+                a {
+                  @apply text-white font-semibold px-3.5 py-1 rounded-full text-center text-xs min-w-40 md:text-[15px] md:py-2 md:px-5 md:min-w-auto;
+                }
+              }
+            }
+          }
+        }
+      }
+      #section2 {
+        ::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      #section3 {
+        article {
+          @apply flex gap-10 flex-wrap justify-center;
+          figure {
+            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 pb-4;
+            img {
+              @apply md:h-60 md:w-full;
+            }
+            figcaption {
+              @apply px-5 py-3 flex flex-col;
+              h3 {
+                @apply font-bold my-2 text-sm md:text-lg;
+              }
+              p {
+                @apply text-xs md:text-[16px];
+              }
+              nav {
+                @apply flex gap-2 md:gap-3 text-xs;
+                a {
+                  @apply px-3 py-2 bg-white rounded-3xl mt-5 text-black md:text-[15px] text-xs md:py-2 font-bold text-center hover:opacity-80 hover:ease-in hover:duration-200;
+                }
+              }
+            }
+          }
+        }
+      }
+      #section4 {
+        article {
+          @apply flex gap-10 overflow-x-scroll;
+          figure {
+            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 min-w-65 md:min-w-100 pb-4;
+            img {
+              @apply md:h-60 h-40 md:w-full;
+            }
+            figcaption {
+              @apply px-5 py-3 flex flex-col;
+              h3 {
+                @apply font-bold my-2 text-sm md:text-lg;
+              }
+              p {
+                @apply text-xs md:text-[16px];
+              }
+              nav {
+                @apply mt-5;
+                a {
+                  @apply px-3 py-1 bg-white rounded-3xl w-30 text-black md:text-[15px] text-xs md:py-2 font-bold  text-center hover:opacity-80 hover:ease-in hover:duration-200;
+                }
+              }
+            }
+          }
+        }
+      }
+      #section5 {
+        article {
+          input,
+          textarea {
+            @apply border border-white rounded-lg w-full p-2.5 md:p-4 text-xs md:text-sm;
+          }
+          button {
+            @apply font-bold text-xs md:text-[15px] w-[50%] p-2 md:py-3 rounded-full;
+          }
+        }
+      }
+      @keyframes scroll {
+        from {
+          translate: -100%;
+        }
+        to {
+          translate: 0;
+        }
+      }
     </style>
   </head>
-  <body class="bg-black">
-    <header
-      class="flex h-15 justify-between items-center fixed md:top-0 bottom-[-5px] w-full px-5 bg-black border-b border-gray-900"
-    >
-      <h1 class="font-bold hidden md:block">
-        Sathvik's <span clas="text-sky-500">Portfolio</span>
-      </h1>
-      <nav id="navbar" class="w-full md:w-auto overflow-scroll pt-2">
-        <ul class="flex text-md font-semibold text-md w-full justify-evenly md:">
+  <body class="bg-black text-white md:text-3xl">
+    <header class="laptop-header">
+      <h1>Sathvik's <span class="text-cyan-500">Portfolio</span></h1>
+      <nav id="navbar">
+        <ul>
           <li>
             <a href="#section1" class="active nav"
               ><i class="fa-solid fa-home"></i>
@@ -155,7 +231,7 @@
             >
           </li>
           <li>
-            <a href="#section2" class="nav"
+            <a href="#section2" class="nav md:flex-row-reverse"
               ><p>Certificates</p>
               <i class="fa-solid fa-trophy"></i>
             </a>
@@ -167,13 +243,13 @@
             >
           </li>
           <li>
-            <a href="#section4" class="nav"
+            <a href="#section4" class="nav md:flex-row-reverse"
               ><p>Events</p>
               <i class="fa-solid fa-clipboard-check"></i>
             </a>
           </li>
           <li>
-            <a href="#section5" class="nav"
+            <a href="#section5" class="nav md:flex-row-reverse"
               ><p>Contact</p>
               <i class="fa-solid fa-user"></i>
             </a>
@@ -181,143 +257,487 @@
         </ul>
       </nav>
     </header>
-    <header class="w-full h-15 bg-black md:hidden text-lg font-bold p-5 text-sky-500">
-      Sathvik's <span class="text-white">Portfolio</span>
-    </header>
+    <header class="mobile-header">Sathvik's <span class="text-white">Portfolio</span></header>
     <main>
-      <section id="section1" class="">
-        <article class="flex flex-wrap md:flex-nowrap gap-10">
+      <section id="section1">
+        <article>
           <div>
-            <h2 class="font-bold text-3xl">Hello,</h2>
-            <h2 class="text-3xl font-bold mb-2">
+            <h2>Hello,</h2>
+            <h2 class="mb-1">
               I'm
-              <span class="text-sky-500 font-bold text-3xl">Sathvik Palivela</span>
+              <span class="text-sky-500 font-bold text-3xl md:text-5xl">Sathvik Palivela</span>
             </h2>
-            <b class="text-md"> Web Developer | AI/ML Enthusiast</b>
-            <p class="mb-5 mt-1 text-justify text-md">
+            <b class="md:text-2xl"> Web Developer | AI/ML Enthusiast</b>
+            <p class="mb-4 md:mb-6 mt-2 text-justify md:text-left md:text-2xl md:pr-12">
               I'm a Computer Science student passionate about building intelligent systems and
               crafting clean, scalable solutions. I develop full-stack web projects, explore machine
               learning models, and create automation tools that solve real-world problems.
             </p>
-            <nav class="flex gap-3 items-center">
+            <nav class="flex gap-3 md:gap-4 items-center">
               <a
-                href="#section1"
-                id="hello"
-                class="bg-sky-500 text-white px-4 py-2 text-sm rounded-3xl font-bold"
-                >Say Hello</a
-              >
-              <a href="https://github.com/SATHVIK-CONNECT" class="link"
+                href="#section5"
+                class="bg-sky-500 text-white text-xs md:text-lg px-4 py-2 min-w-30 rounded-3xl font-bold flex justify-center items-center"
+                ><p>Say Hello</p>
+                &emsp;<i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="https://github.com/SATHVIK-CONNECT" target="_blank" class="link"
                 ><i class="fa-brands fa-github"></i
               ></a>
-              <a href="https://www.linkedin.com/in/sathvikpalivela/" class="link"
+              <a href="https://www.linkedin.com/in/sathvikpalivela/" target="_blank" class="link"
                 ><i class="fa-brands fa-linkedin"></i
               ></a>
-              <a href="https://www.facebook.com/sathvik.Palivela.77" class="link"
+              <a href="https://www.facebook.com/sathvik.Palivela.77" target="_blank" class="link"
                 ><i class="fa-brands fa-facebook"></i
               ></a>
-              <a href="https://www.hackerrank.com/profile/sathvikpalivela0" class="link"
+              <a
+                href="https://www.hackerrank.com/profile/sathvikpalivela0"
+                target="_blank"
+                class="link"
                 ><i class="fa-brands fa-hackerrank"></i
               ></a>
-              <a href="https://learn.microsoft.com/en-in/users/sathvikpalivela-5018/" class="link"
+              <a
+                href="https://www.hackerrank.com/profile/sathvikpalivela0"
+                target="_blank"
+                class="link"
                 ><i class="fa-brands fa-microsoft"></i
               ></a>
             </nav>
           </div>
-          <div class="flex flex-col gap-4">
-            <h1 class="text-center text-md font-bold"><span class="text-sky-500">Sk</span>ills</h1>
-            <!-- <br /> -->
-            <ul class="flex-center flex-wrap">
-              <li>
-                <span>HTML</span>
-                <hr class="html" />
-              </li>
-              <li>
-                <span>CSS</span>
-                <hr class="css" />
-              </li>
-              <li>
-                <span>JS</span>
-                <hr class="js" />
-              </li>
-              <li>
-                <span>React</span>
-                <hr class="react" />
-              </li>
-
-              <li>
-                <span>Python</span>
-                <hr class="python" />
-              </li>
-              <li>
-                <span>AI/ML</span>
-                <hr class="aiml" />
-              </li>
-              <li>
-                <span>Django</span>
-                <hr class="django" />
-              </li>
-              <li>
-                <span>Flask</span>
-                <hr class="flask" />
-              </li>
-
-              <li>
-                <span>Git</span>
-                <hr class="git" />
-              </li>
-              <li>
-                <span>Github</span>
-                <hr class="github" />
-              </li>
-              <li>
-                <span>SQL</span>
-                <hr class="sql" />
-              </li>
-              <li>
-                <span>NoSQL</span>
-                <hr class="nosql" />
-              </li>
-
-              <li>
-                <span>DataStructures</span>
-                <hr class="git" />
-              </li>
-              <li>
-                <span>Java</span>
-                <hr class="github" />
-              </li>
-              <li>
-                <span>C</span>
-                <hr class="sql" />
-              </li>
-              <li>
-                <span>C++</span>
-                <hr class="nosql" />
-              </li>
-            </ul>
+          <div class="flex flex-col overflow-x-scroll">
+            <h1 class="md:text-xl mb-3"><span class="text-sky-500">Sk</span>ills</h1>
+            <div class="flex overflow-x-scroll">
+              <ul class="flex-center pr-4" style="animation: scroll 20s infinite linear">
+                <li>
+                  <span
+                    ><i class="fa-brands fa-python"></i>&emsp;
+                    <p>Python</p></span
+                  >
+                  <hr class="python" />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-robot"></i>&emsp;
+                    <p>AI/ML</p></span
+                  >
+                  <hr class="aiml" />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-web-awesome"></i>&emsp;
+                    <p>Django</p></span
+                  >
+                  <hr class="django" />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-flask"></i>&emsp;
+                    <p>Flask</p></span
+                  >
+                  <hr class="flask" />
+                </li>
+              </ul>
+              <ul
+                aria-hidden
+                class="flex-center pr-4"
+                style="animation: scroll 20s infinite linear"
+              >
+                <li>
+                  <span
+                    ><i class="fa-brands fa-python"></i>&emsp;
+                    <p>Python</p></span
+                  >
+                  <hr class="python" />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-robot"></i>&emsp;
+                    <p>AI/ML</p></span
+                  >
+                  <hr class="aiml" />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-web-awesome"></i>&emsp;
+                    <p>Django</p></span
+                  >
+                  <hr class="django" />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-flask"></i>&emsp;
+                    <p>Flask</p></span
+                  >
+                  <hr class="flask" />
+                </li>
+              </ul>
+              <ul
+                aria-hidden
+                class="flex-center pr-4"
+                style="animation: scroll 20s infinite linear"
+              >
+                <li>
+                  <span
+                    ><i class="fa-brands fa-python"></i>&emsp;
+                    <p>Python</p></span
+                  >
+                  <hr class="python" />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-robot"></i>&emsp;
+                    <p>AI/ML</p></span
+                  >
+                  <hr class="aiml" />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-web-awesome"></i>&emsp;
+                    <p>Django</p></span
+                  >
+                  <hr class="django" />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-flask"></i>&emsp;
+                    <p>Flask</p></span
+                  >
+                  <hr class="flask" />
+                </li>
+              </ul>
+            </div>
+            <div class="flex overflow-x-scroll">
+              <ul class="flex-center pr-4" style="animation: scroll 20s infinite linear reverse">
+                <li>
+                  <span
+                    ><i class="fa-brands fa-html5"></i> &emsp;
+                    <p>HTML</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-css3-alt"></i> &emsp;
+                    <p>CSS</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-js-square"></i> &emsp;
+                    <p>JavaScript</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-react"></i> &emsp;
+                    <p>React</p></span
+                  >
+                  <hr />
+                </li>
+              </ul>
+              <ul
+                aria-hidden
+                class="flex-center pr-4"
+                style="animation: scroll 20s infinite linear reverse"
+              >
+                <li>
+                  <span
+                    ><i class="fa-brands fa-html5"></i> &emsp;
+                    <p>HTML</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-css3-alt"></i> &emsp;
+                    <p>CSS</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-js-square"></i> &emsp;
+                    <p>JavaScript</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-react"></i> &emsp;
+                    <p>React</p></span
+                  >
+                  <hr />
+                </li>
+              </ul>
+              <ul
+                aria-hidden
+                class="flex-center pr-4"
+                style="animation: scroll 20s infinite linear reverse"
+              >
+                <li>
+                  <span
+                    ><i class="fa-brands fa-html5"></i> &emsp;
+                    <p>HTML</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-css3-alt"></i> &emsp;
+                    <p>CSS</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-js-square"></i> &emsp;
+                    <p>JavaScript</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-react"></i> &emsp;
+                    <p>React</p></span
+                  >
+                  <hr />
+                </li>
+              </ul>
+            </div>
+            <div class="flex overflow-x-scroll">
+              <ul class="flex-center pr-4" style="animation: scroll 20s infinite linear">
+                <li>
+                  <span
+                    ><i class="fa-brands fa-git-alt"></i> &emsp;
+                    <p>Git</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-github"></i> &emsp;
+                    <p>Github</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-database"></i> &emsp;
+                    <p>SQL</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-server"></i> &emsp;
+                    <p>NoSQL</p></span
+                  >
+                  <hr />
+                </li>
+              </ul>
+              <ul
+                aria-hidden
+                class="flex-center pr-4"
+                style="animation: scroll 20s infinite linear"
+              >
+                <li>
+                  <span
+                    ><i class="fa-brands fa-git-alt"></i> &emsp;
+                    <p>Git</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-github"></i> &emsp;
+                    <p>Github</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-database"></i> &emsp;
+                    <p>SQL</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-server"></i> &emsp;
+                    <p>NoSQL</p></span
+                  >
+                  <hr />
+                </li>
+              </ul>
+              <ul
+                aria-hidden
+                class="flex-center pr-4"
+                style="animation: scroll 20s infinite linear"
+              >
+                <li>
+                  <span
+                    ><i class="fa-brands fa-git-alt"></i> &emsp;
+                    <p>Git</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-github"></i> &emsp;
+                    <p>Github</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-database"></i> &emsp;
+                    <p>SQL</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-server"></i> &emsp;
+                    <p>NoSQL</p></span
+                  >
+                  <hr />
+                </li>
+              </ul>
+            </div>
+            <div class="flex overflow-x-scroll">
+              <ul class="flex-center pr-4" style="animation: scroll 20s infinite linear reverse">
+                <li>
+                  <span
+                    ><i class="fa-solid fa-file-fragment"></i> &emsp;
+                    <p>DataStructures</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-java"></i> &emsp;
+                    <p>Java</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-code"></i> &emsp;
+                    <p>C</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-laptop-code"></i> &emsp;
+                    <p>C++</p></span
+                  >
+                  <hr />
+                </li>
+              </ul>
+              <ul
+                aria-hidden
+                class="flex-center pr-4"
+                style="animation: scroll 20s infinite linear reverse"
+              >
+                <li>
+                  <span
+                    ><i class="fa-solid fa-file-fragment"></i> &emsp;
+                    <p>DataStructures</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-java"></i> &emsp;
+                    <p>Java</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-code"></i> &emsp;
+                    <p>C</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-laptop-code"></i> &emsp;
+                    <p>C++</p></span
+                  >
+                  <hr />
+                </li>
+              </ul>
+              <ul
+                aria-hidden
+                class="flex-center pr-4"
+                style="animation: scroll 20s infinite linear reverse"
+              >
+                <li>
+                  <span
+                    ><i class="fa-solid fa-file-fragment"></i> &emsp;
+                    <p>DataStructures</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-brands fa-java"></i> &emsp;
+                    <p>Java</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-code"></i> &emsp;
+                    <p>C</p></span
+                  >
+                  <hr />
+                </li>
+                <li>
+                  <span
+                    ><i class="fa-solid fa-laptop-code"></i> &emsp;
+                    <p>C++</p></span
+                  >
+                  <hr />
+                </li>
+              </ul>
+            </div>
           </div>
         </article>
       </section>
-
       <section id="section2">
-        <h1 class="text-center text-md font-bold">
+        <h1 class="text-center font-bold">
           <span class="text-sky-500">Certifi</span>cations and
           <span class="text-sky-500">Achieve</span>ments
         </h1>
         <br />
-        <article class="flex gap-10 flex-wrap justify-center">
-          <figure id="card">
+        <nav>
+          <a class="active2">All</a>
+          <a class="text-gray-500">Microsoft</a>
+          <a class="text-gray-500">Infosys</a>
+          <a class="text-gray-500">More</a>
+        </nav>
+        <br class="md:hidden" />
+        <article>
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/edx.jpg" loading="lazy" />
-            <figcaption class="px-4 py-2">
+            <figcaption>
               <h3>Introduction to Computer Science</h3>
               <p>
                 Learned fundamental concepts of programming and algorithms. Developed
                 problem-solving skills through hands-on coding exercises.
               </p>
+              <div>
+                <a class="bg-yellow-500" style="box-shadow: 0 0 10px rgb(99, 54, 16)"
+                  >Harvard University</a
+                ><a class="bg-green-500" style="box-shadow: 0 0 10px rgb(24, 69, 14)">Edx</a>
+              </div>
             </figcaption>
           </figure>
-
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/forage.png" loading="lazy" />
             <figcaption>
               <h3>Data Analytics - Forage Deloitte</h3>
@@ -325,10 +745,12 @@
                 Gained expertise in data visualization and statistical analysis. Applied techniques
                 to real-world datasets for insights.
               </p>
+              <div>
+                <a class="bg-cyan-500" style="box-shadow: 0 0 10px rgb(13, 49, 67)">Deloitte</a>
+              </div>
             </figcaption>
           </figure>
-
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/edx.jpg" loading="lazy" />
             <figcaption>
               <h3>Python and JavaScript - EdX</h3>
@@ -336,21 +758,30 @@
                 Mastered scripting languages for web and automation. Built interactive applications
                 and backend services.
               </p>
+              <div>
+                <a class="bg-green-500" style="box-shadow: 0 0 10px rgb(24, 69, 14)">EdX</a>
+              </div>
             </figcaption>
           </figure>
-
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/edunet.jpg" loading="lazy" />
-            <figcaption class="">
+            <figcaption>
               <h3>Applied Artificial Intelligence</h3>
               <p>
                 Explored machine learning models and neural networks. Implemented AI solutions for
                 predictive analytics.
               </p>
+              <div>
+                <a class="bg-orange-500" style="box-shadow: 0 0 10px rgb(69, 52, 14)"
+                  >Machine Learning</a
+                >
+                <a class="bg-cyan-500" style="box-shadow: 0 0 10px rgb(14, 69, 69)"
+                  >Artificial Intelligence</a
+                >
+              </div>
             </figcaption>
           </figure>
-
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/oa.jpg" loading="lazy" />
             <figcaption>
               <h3>MERN Stack</h3>
@@ -358,30 +789,36 @@
                 Developed full-stack web applications using MongoDB, Express, React, and Node.js.
                 Created scalable and responsive user interfaces.
               </p>
+              <div>
+                <a class="bg-red-500" style="box-shadow: 0 0 10px rgb(74, 11, 5)">React</a>
+                <a class="bg-cyan-500" style="box-shadow: 0 0 10px rgb(13, 49, 67)">Express</a>
+                <a class="bg-orange-500" style="box-shadow: 0 0 10px rgb(69, 54, 14)">Node</a>
+                <a class="bg-green-500" style="box-shadow: 0 0 10px rgb(24, 69, 14)">Mongo</a>
+              </div>
             </figcaption>
           </figure>
         </article>
       </section>
-
       <section id="section3">
-        <h1 class="text-center text-md font-bold"><span class="text-sky-500">Pro</span>jects</h1>
+        <h1 class="text-center font-bold"><span class="text-sky-500">Pro</span>jects</h1>
         <br />
-        <article class="flex gap-10 flex-wrap justify-center">
-          <figure id="card">
+        <article>
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/Spark.jpg" loading="lazy" />
-            <figcaption id="desc">
+            <figcaption>
               <h3>Spark AI - Streamlit</h3>
               <p>
                 An AI-powered chatbot for interacting with images and PDFs. Utilizes natural
                 language processing for seamless conversations.
               </p>
-              <a href="https://sathvik.streamlit.app"
-                >Click Here&emsp;<i class="fa-solid fa-arrow-right"></i
-              ></a>
+              <nav>
+                <a href="https://sathvik.streamlit.app" class="open"
+                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
+              </nav>
             </figcaption>
           </figure>
-
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/Quiz.avif" loading="lazy" />
             <figcaption>
               <h3>Achieve - Django</h3>
@@ -389,26 +826,29 @@
                 A quiz application developed with Django framework. Features user authentication and
                 score tracking.
               </p>
-              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
+              <nav>
+                <a href="https://sathvik.streamlit.app" class="open"
+                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
+              </nav>
             </figcaption>
           </figure>
-
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/Flip.webp" loading="lazy" />
             <figcaption>
               <h3>Flipkart Clone - MERN</h3>
-              <p class="">
+              <p>
                 An e-commerce platform mimicking Flipkart's features. Includes product listings,
                 cart, and payment integration.
               </p>
-
-              <a href="https://flipkart-backend-q9yh.onrender.com/"
-                >Click Here&emsp;<i class="fa-solid fa-arrow-right"></i
-              ></a>
+              <nav>
+                <a href="https://sathvik.streamlit.app" class="open"
+                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
+              </nav>
             </figcaption>
           </figure>
-
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/Chatbot.webp" loading="lazy" />
             <figcaption>
               <h3>Chatbot - IBM</h3>
@@ -416,12 +856,14 @@
                 A conversational AI for customer support. Integrated with cloud services for
                 scalability.
               </p>
-
-              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
+              <nav>
+                <a href="https://sathvik.streamlit.app" class="open"
+                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
+              </nav>
             </figcaption>
           </figure>
-
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/farma.png" loading="lazy" />
             <figcaption>
               <h3>Farma AI</h3>
@@ -429,14 +871,14 @@
                 AI model for identifying tree species from images. Uses computer vision and machine
                 learning algorithms.
               </p>
-
-              <a href="https://sih-bley43d1q-sathviks-projects-2923d827.vercel.app/"
-                >Click Here&emsp;<i class="fa-solid fa-arrow-right"></i
-              ></a>
+              <nav>
+                <a href="https://sathvik.streamlit.app" class="open"
+                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
+              </nav>
             </figcaption>
           </figure>
-
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/src/Training.png" loading="lazy" />
             <figcaption>
               <h3>Interview Trainer Agent - IBM</h3>
@@ -444,108 +886,122 @@
                 A virtual agent for practicing interview skills. Provides feedback based on
                 responses and performance.
               </p>
-
-              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
+              <nav>
+                <a href="https://sathvik.streamlit.app" class="open"
+                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
+              </nav>
             </figcaption>
           </figure>
         </article>
-        <!-- <h3
-          class="text-center text-md font-bold bg-gray-500/30 text-white mt-5 rounded-full px-2 py-1"
-        >
-          More
-        </h3> -->
       </section>
       <section id="section4">
-        <h1 class="text-center text-md font-bold"><span class="text-sky-500">Eve</span>nts</h1>
+        <h1 class="text-center font-bold"><span class="text-sky-500">Eve</span>nts</h1>
         <br />
-        <article class="flex gap-10 overflow-x-scroll">
-          <figure id="card">
+        <article>
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" loading="lazy" />
             <figcaption>
               <h3>Microsoft Ai Tour</h3>
-              <p class="text-justify">
+              <p>
                 The Microsoft AI Tour in Bengaluru was an event that emphasized India's crucial role
                 in global AI innovation, featuring keynotes from CEO Satya Nadella and hands-on
                 workshops on building AI solutions and Copilots.
               </p>
-
-              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
+              <nav>
+                <a href="">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-solid fa-images"></i></a>
+              </nav>
             </figcaption>
           </figure>
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/eve-sih.jpeg" loading="lazy" />
             <figcaption>
               <h3>Smart India Hackathon</h3>
-              <p class="text-justify">
+              <p>
                 The Smart India Hackathon (SIH) is a nationwide initiative for students to solve
                 real-world problem statements provided by various government ministries and
                 industries.
               </p>
-              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
+              <nav>
+                <a href="">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-solid fa-images"></i></a>
+              </nav>
             </figcaption>
           </figure>
-          <figure id="card">
+          <figure>
             <img src="https://ik.imagekit.io/sathvik/eve-rbi.avif" loading="lazy" />
             <figcaption>
               <h3>RBI 90 Quiz</h3>
-              <p class="text-justify">
+              <p>
                 The RBI 90 Quiz was a multi-stage, nationwide general knowledge competition for
                 undergraduate students organized by the Reserve Bank of India to commemorate its
                 90th anniversary.
               </p>
-              <a href="">Click Here&emsp;<i class="fa-solid fa-arrow-right"></i></a>
+              <nav>
+                <a href="">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-solid fa-images"></i></a>
+              </nav>
             </figcaption>
           </figure>
         </article>
       </section>
       <section id="section5">
-        <h1 class="text-center text-md font-bold">Contact <span class="text-sky-500"> Me</span></h1>
+        <h1 class="text-center font-bold">Contact <span class="text-sky-500"> Me</span></h1>
         <br />
-        <article class="flex gap-10 flex-wrap justify-center">
-          <form class="flex flex-col gap-3 items-center justify-center" method="POST">
-            <input
-              class="border border-white rounded-lg w-full p-2 text-xs"
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-            />
-            <input
-              type="email"
-              class="border border-white rounded-lg w-full p-2 text-xs"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              class="border border-white rounded-lg w-full p-2 text-xs"
-              placeholder="Your Message"
-              required
-            ></textarea>
-            <div class="flex w-full gap-4">
-              <button
-                type="reset"
-                onclick=""
-                class="bg-gray-500/30 text-white font-bold text-xs w-[50%] p-2 rounded-full"
-              >
-                Clear&emsp; <i class="fa-solid fa-trash"></i>
+        <article class="flex gap-10 flex-wrap justify-center md:justify-around">
+          <form class="flex flex-col gap-3 items-center justify-center w-100" method="POST">
+            <h1 class="self-start mb-3 hidden md:block">
+              <span class="text-cyan-500">Mail</span> Me
+            </h1>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <div class="flex w-full gap-4 md:mt-4">
+              <button type="reset" class="bg-gray-700/20">
+                Clear&emsp;<i class="fa-solid fa-trash"></i>
               </button>
-              <button
-                type="button"
-                onclick=""
-                class="bg-white text-black font-bold text-xs w-[50%] p-2 rounded-full"
-              >
-                Send&emsp; <i class="fa-solid fa-share"></i>
+              <button type="button" class="bg-white text-black">
+                Send&emsp;<i class="fa-solid fa-share"></i>
               </button>
             </div>
           </form>
+          <div
+            class="hidden md:block px-15 py-2 md:flex md:flex-col md:gap-5 border border-gray-500/20 rounded-4xl h-100"
+          >
+            <h1 class="self-start mb-8 mt-5"><span class="text-cyan-500">Social</span> Links</h1>
+            <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
+              Resume &emsp;<i class="fa-solid fa-download"></i>
+            </h1>
+            <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
+              Linked In &emsp;<i class="fa-brands fa-linkedin"></i>
+            </h1>
+            <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
+              WhatsApp &emsp;<i class="fa-brands fa-solid fa-whatsapp"></i>
+            </h1>
+          </div>
         </article>
       </section>
     </main>
+    <footer class="p-10 md:mt-10 mb-10 md:mb-20 md:p-20 md:mb-10">
+      <center>
+        <h1 class="text-xs md:text-lg text-gray-500">&copy; &nbsp; Sathvik Palivela - 2025</h1>
+        <p class="text-xs md:text-lg text-gray-500">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam commodi eum expedita ea cum
+          quisquam aut nisi soluta neque odio, exercitationem nostrum id eveniet cupiditate fugit
+          repellat quos autem voluptatum!
+        </p>
+        <p class="text-xs md:text-lg text-gray-500 hidden md:block">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam commodi eum expedita ea cum
+          quisquam aut nisi soluta neque odio, quos autem voluptatum!
+        </p>
+      </center>
+    </footer>
     <script>
       const navs = document.querySelectorAll(".nav");
-
       navs.forEach((nav) => {
         nav.addEventListener("click", (e) => {
           navs.forEach((nav) => {
@@ -555,28 +1011,32 @@
           nav.classList.add("active");
         });
       });
-
       const sections = document.querySelectorAll("section[id]");
       window.addEventListener("scroll", navHighlighter);
       function navHighlighter() {
         let scrollY = window.pageYOffset;
+        let clientHeight = document.documentElement.clientHeight;
+        let scrollHeight = document.documentElement.scrollHeight;
+        let offsetValue;
+        if (window.matchMedia("(min-width: 1024px)").matches) {
+          offsetValue = 500;
+        } else {
+          offsetValue = 300;
+        }
         sections.forEach((current) => {
           const sectionHeight = current.offsetHeight;
-          const sectionTop = current.offsetTop - 500;
+          const sectionTop = current.offsetTop - offsetValue;
           const sectionId = current.getAttribute("id");
-          let scrollHeight = document.documentElement.scrollHeight;
-          let clientHeight = document.documentElement.clientHeight;
-
-          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector(`#navbar a[href="#${sectionId}"]`).classList.add("active");
+          const navLink = document.querySelector(`#navbar a[href="#${sectionId}"]`);
+          if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+            if (navLink) {
+              navLink.classList.add("active");
+            }
           } else {
-            document.querySelector(`#navbar a[href="#${sectionId}"]`).classList.remove("active");
+            if (navLink) {
+              navLink.classList.remove("active");
+            }
           }
-
-          // End Section
-          // if (scrollY + clientHeight >= scrollHeight) {
-          //   document.querySelector("#navbar a[href=#section5}]").classList.add("active");
-          // }
         });
       }
     </script>
