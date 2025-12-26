@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sathvik Palivela</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="icon" href="icon.png" type="image/x-icon" />
+    <link rel="icon" href="https://ik.imagekit.io/sathvik/icon.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/98243d2037.js" crossorigin="anonymous"></script>
     <style type="text/tailwindcss">
-      html {
-        scroll-behavior: smooth;
+      @media (min-width: 768px) {
+        html {
+          scroll-behavior: smooth;
+        }
       }
+
       ::-webkit-scrollbar {
         visibility: hidden;
         width: 0;
@@ -43,6 +46,9 @@
         .open {
           @apply px-5 py-2 bg-white w-30 rounded-3xl text-black font-bold mt-5 text-center hover:opacity-80 hover:ease-in hover:duration-200 md:text-[15px] flex justify-center items-center;
         }
+        .inactive {
+          pointer-events: none;
+        }
       }
       @layer utilities {
         .flex-center {
@@ -68,6 +74,10 @@
           }
         }
         header {
+          overflow: auto;
+          scroll-behavior: auto;
+        }
+        header {
           h1 {
             @apply font-bold hidden md:block;
           }
@@ -77,7 +87,7 @@
               @apply flex font-semibold justify-evenly md:gap-2;
               li {
                 a {
-                  @apply px-4 py-2 hover:bg-gray-500/30 hover:ease-in hover:duration-300 text-white rounded-3xl  flex items-center gap-2 text-xs md:text-sm md:font-normal md:gap-2.5;
+                  @apply px-4 py-2 hover:bg-gray-500/30 ease-in duration-300 text-white rounded-3xl  flex items-center gap-2 text-xs md:text-sm md:font-normal md:gap-2.5;
                   p {
                     @apply hidden md:block font-bold;
                   }
@@ -111,15 +121,15 @@
       }
       #section2 {
         nav {
-          @apply px-1.5 flex h-12 items-center gap-2 overflow-scroll md:hidden bg-gray-500/10 rounded-full text-xs;
+          @apply hidden px-1.5 flex h-12 items-center md:justify-center md:m-auto gap-2 md:py-8 overflow-hidden overflow-x-scroll bg-gray-600/10 md:w-150 rounded-full text-xs;
           a {
-            @apply min-w-25 font-bold p-2 ml-0.5 rounded-full text-center;
+            @apply min-w-25 font-bold px-6 py-2 ml-0.5 rounded-full text-center md:text-lg cursor-pointer;
           }
         }
         article {
-          @apply flex gap-10 flex-wrap md:flex-nowrap justify-center md:justify-start md:overflow-x-scroll rounded-xl;
+          @apply flex gap-10 flex-wrap md:flex-nowrap justify-center md:justify-start md:overflow-x-scroll md:p-10 rounded-xl;
           figure {
-            @apply flex justify-center border border-gray-500/30 rounded-xl overflow-hidden md:flex-col md:min-w-100 md:min-h-120 md:items-center md:justify-start;
+            @apply flex justify-center border border-gray-500/30 rounded-xl overflow-hidden md:flex-col md:min-w-100 md:min-h-120 md:items-center md:justify-start md:hover:scale-110 md:hover:duration-300 md:hover:border-gray-500;
             img {
               @apply min-w-20 w-20 h-full object-contain bg-white md:w-[100%] md:h-[60%];
             }
@@ -132,9 +142,9 @@
                 @apply text-xs mt-1 md:text-[16px];
               }
               div {
-                @apply mt-4 overflow-x-scroll flex gap-3 py-2 md:flex-wrap;
+                @apply mt-4 overflow-x-scroll flex gap-3 py-2 md:px-2 md:flex-wrap;
                 a {
-                  @apply text-white font-semibold px-3.5 py-1 rounded-full text-center text-xs min-w-40 md:text-[15px] md:py-2 md:px-5 md:min-w-auto;
+                  @apply text-white font-semibold px-3.5 py-1 rounded-full text-center text-xs min-w-auto  md:min-w-auto md:text-[15px] md:py-2 md:px-5 whitespace-nowrap md:text-shadow-lg text-shadow-sm;
                 }
               }
             }
@@ -150,7 +160,7 @@
         article {
           @apply flex gap-10 flex-wrap justify-center;
           figure {
-            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 pb-4;
+            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 pb-4 md:hover:duration-300 md:hover:scale-110 md:hover:border-gray-500;
             img {
               @apply md:h-60 md:w-full;
             }
@@ -176,7 +186,7 @@
         article {
           @apply flex gap-10 overflow-x-scroll;
           figure {
-            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 min-w-65 md:min-w-100 pb-4;
+            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 min-w-65 md:min-w-100 pb-4 md:hover:duration-300 md:hover:scale-110 md:hover:border-gray-500;
             img {
               @apply md:h-60 h-40 md:w-full;
             }
@@ -189,9 +199,9 @@
                 @apply text-xs md:text-[16px];
               }
               nav {
-                @apply mt-5;
+                @apply mt-5 flex gap-2 md:gap-3 text-xs;
                 a {
-                  @apply px-3 py-1 bg-white rounded-3xl w-30 text-black md:text-[15px] text-xs md:py-2 font-bold  text-center hover:opacity-80 hover:ease-in hover:duration-200;
+                  @apply px-3 py-2 bg-white rounded-3xl mt-5 text-black md:text-[15px] text-xs md:py-2 font-bold text-center hover:opacity-80 hover:ease-in hover:duration-200;
                 }
               }
             }
@@ -217,11 +227,44 @@
           translate: 0;
         }
       }
+
+      /* Carousal */
+      #section4 {
+        article {
+          @apply flex flex-wrap justify-center gap-8 md:py-10 md:px-5;
+        }
+        .cards {
+          @apply flex flex-col rounded-[10px] md:rounded-2xl overflow-hidden;
+          @apply shadow-[0_0_10px_rgba(0,0,0,0.1)];
+        }
+        .image-carousel {
+          @apply relative h-[200px] overflow-hidden touch-pan-y;
+        }
+        .image-carousel-inner {
+          @apply flex h-full transition-transform duration-500 ease-out;
+        }
+        .image-carousel img {
+          @apply w-full h-full object-cover shrink-0;
+        }
+        .description {
+          @apply p-5;
+        }
+        .dots {
+          @apply absolute bottom-[10px] left-1/2 -translate-x-1/2 flex gap-2 z-10;
+        }
+        .dot {
+          @apply w-[10px] h-[10px] rounded-full bg-white/50 cursor-pointer;
+          @apply border border-black/20 transition-all duration-300;
+        }
+        .dot.active {
+          @apply bg-white scale-125;
+        }
+      }
     </style>
   </head>
   <body class="bg-black text-white md:text-3xl">
     <header class="laptop-header">
-      <h1>Sathvik's <span class="text-cyan-500">Portfolio</span></h1>
+      <h1>Sathvik's <span class="text-sky-500">Portfolio</span></h1>
       <nav id="navbar">
         <ul>
           <li>
@@ -283,12 +326,7 @@
               <a href="https://github.com/SATHVIK-CONNECT" target="_blank" class="link"
                 ><i class="fa-brands fa-github"></i
               ></a>
-              <a href="https://www.linkedin.com/in/sathvikpalivela/" target="_blank" class="link"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
-              <a href="https://www.facebook.com/sathvik.Palivela.77" target="_blank" class="link"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
+
               <a
                 href="https://www.hackerrank.com/profile/sathvikpalivela0"
                 target="_blank"
@@ -299,13 +337,18 @@
                 href="https://www.hackerrank.com/profile/sathvikpalivela0"
                 target="_blank"
                 class="link"
-                ><i class="fa-brands fa-microsoft"></i
+                ><i class="fa-brands fa-microsoft"></i></a
+              ><a href="https://www.linkedin.com/in/sathvikpalivela/" target="_blank" class="link"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://www.facebook.com/sathvik.Palivela.77" target="_blank" class="link"
+                ><i class="fa-brands fa-facebook"></i
               ></a>
             </nav>
           </div>
           <div class="flex flex-col overflow-x-scroll">
             <h1 class="md:text-xl mb-3"><span class="text-sky-500">Sk</span>ills</h1>
-            <div class="flex overflow-x-scroll">
+            <div class="flex overflow-x-scroll inactive">
               <ul class="flex-center pr-4" style="animation: scroll 20s infinite linear">
                 <li>
                   <span
@@ -713,15 +756,38 @@
           <span class="text-sky-500">Certifi</span>cations and
           <span class="text-sky-500">Achieve</span>ments
         </h1>
-        <br />
-        <nav>
-          <a class="active2">All</a>
-          <a class="text-gray-500">Microsoft</a>
-          <a class="text-gray-500">Infosys</a>
-          <a class="text-gray-500">More</a>
-        </nav>
-        <br class="md:hidden" />
-        <article>
+        <br class="hidden" />
+        <center>
+          <nav class="relative flex items-center gap-6 p-2 bg-white rounded-lg">
+            <div
+              id="indicator"
+              class="absolute bottom-0 h-0.5 transition-all duration-300 ease-in-out"
+            ></div>
+            <a
+              href="#"
+              data-target="all"
+              class="nav-link active2 cursor-pointer transition-colors duration-200"
+              >All</a
+            >
+            <a
+              href="#"
+              data-target="microsoft"
+              class="nav-link text-gray-500 cursor-pointer transition-colors duration-200"
+              >Microsoft</a
+            >
+            <a href="#" class="nav-link text-gray-500 cursor-pointer transition-colors duration-200"
+              >Infosys</a
+            >
+            <a href="#" class="nav-link text-gray-500 cursor-pointer transition-colors duration-200"
+              >IBM</a
+            >
+            <a href="#" class="nav-link text-gray-500 cursor-pointer transition-colors duration-200"
+              >More</a
+            >
+          </nav>
+        </center>
+        <br class="hidden" />
+        <article id="all">
           <figure>
             <img src="https://ik.imagekit.io/sathvik/src/edx.jpg" loading="lazy" />
             <figcaption>
@@ -897,10 +963,24 @@
       </section>
       <section id="section4">
         <h1 class="text-center font-bold"><span class="text-sky-500">Eve</span>nts</h1>
-        <br />
+        <!-- <br /> -->
         <article>
-          <figure>
-            <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" loading="lazy" />
+          <figure class="cards">
+            <!-- <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" loading="lazy" /> -->
+            <div class="image-carousel">
+              <div class="image-carousel-inner">
+                <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" alt="Image 1" loading="lazy" />
+                <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" alt="Image 2" loading="lazy" />
+                <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" alt="Image 3" loading="lazy" />
+                <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" alt="Image 4" loading="lazy" />
+              </div>
+              <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
             <figcaption>
               <h3>Microsoft Ai Tour</h3>
               <p>
@@ -909,14 +989,91 @@
                 workshops on building AI solutions and Copilots.
               </p>
               <nav>
-                <a href="">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
+                <a href="" class="open">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
                 <a href=""><i class="fa-solid fa-images"></i></a>
               </nav>
             </figcaption>
           </figure>
-          <figure>
-            <img src="https://ik.imagekit.io/sathvik/eve-sih.jpeg" loading="lazy" />
+          <figure class="cards">
+            <!-- <img src="https://ik.imagekit.io/sathvik/eve-sih.jpeg" loading="lazy" /> -->
+            <div class="image-carousel">
+              <div class="image-carousel-inner">
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  alt="Image 1"
+                  loading="lazy"
+                />
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  alt="Image 2"
+                  loading="lazy"
+                />
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  alt="Image 3"
+                  loading="lazy"
+                />
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  alt="Image 4"
+                  loading="lazy"
+                />
+              </div>
+              <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
+            <figcaption>
+              <h3>Miracle Hackathon - Digital Summit 2025</h3>
+              <p>
+                The Smart India Hackathon (SIH) is a nationwide initiative for students to solve
+                real-world problem statements provided by various government ministries and
+                industries.
+              </p>
+              <nav>
+                <a href="" class="open">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-solid fa-images"></i></a>
+              </nav>
+            </figcaption>
+          </figure>
+
+          <figure class="cards">
+            <!-- <img src="https://ik.imagekit.io/sathvik/eve-sih.jpeg" loading="lazy" /> -->
+            <div class="image-carousel">
+              <div class="image-carousel-inner">
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  alt="Image 1"
+                  loading="lazy"
+                />
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  alt="Image 2"
+                  loading="lazy"
+                />
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  alt="Image 3"
+                  loading="lazy"
+                />
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  alt="Image 4"
+                  loading="lazy"
+                />
+              </div>
+              <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
             <figcaption>
               <h3>Smart India Hackathon</h3>
               <p>
@@ -925,14 +1082,44 @@
                 industries.
               </p>
               <nav>
-                <a href="">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
+                <a href="" class="open">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
                 <a href=""><i class="fa-solid fa-images"></i></a>
               </nav>
             </figcaption>
           </figure>
-          <figure>
-            <img src="https://ik.imagekit.io/sathvik/eve-rbi.avif" loading="lazy" />
+          <figure class="cards">
+            <!-- <img src="https://ik.imagekit.io/sathvik/eve-rbi.avif" loading="lazy" /> -->
+            <div class="image-carousel">
+              <div class="image-carousel-inner">
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-rbi.avif"
+                  alt="Image 1"
+                  loading="lazy"
+                />
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-rbi.avif"
+                  alt="Image 2"
+                  loading="lazy"
+                />
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-rbi.avif"
+                  alt="Image 3"
+                  loading="lazy"
+                />
+                <img
+                  src="https://ik.imagekit.io/sathvik/eve-rbi.avif"
+                  alt="Image 4"
+                  loading="lazy"
+                />
+              </div>
+              <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
             <figcaption>
               <h3>RBI 90 Quiz</h3>
               <p>
@@ -941,7 +1128,7 @@
                 90th anniversary.
               </p>
               <nav>
-                <a href="">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
+                <a href="" class="open">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
                 <a href=""><i class="fa-solid fa-images"></i></a>
               </nav>
@@ -952,10 +1139,13 @@
       <section id="section5">
         <h1 class="text-center font-bold">Contact <span class="text-sky-500"> Me</span></h1>
         <br />
-        <article class="flex gap-10 flex-wrap justify-center md:justify-around">
-          <form class="flex flex-col gap-3 items-center justify-center w-100" method="POST">
+        <article class="flex gap-10 flex-wrap justify-center">
+          <form
+            class="flex flex-col gap-3 items-center justify-center w-100 md:border md:border-gray-500/20 md:rounded-4xl md:px-15 md:py-2"
+            method="POST"
+          >
             <h1 class="self-start mb-3 hidden md:block">
-              <span class="text-cyan-500">Mail</span> Me
+              <span class="text-sky-500">Mail</span> Me
             </h1>
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
@@ -970,17 +1160,24 @@
             </div>
           </form>
           <div
-            class="hidden md:block px-15 py-2 md:flex md:flex-col md:gap-5 border border-gray-500/20 rounded-4xl h-100"
+            class="hidden md:block px-15 py-2 md:flex md:flex-col md:gap-5 border border-gray-500/20 rounded-4xl h-100 w-100"
           >
-            <h1 class="self-start mb-8 mt-5"><span class="text-cyan-500">Social</span> Links</h1>
+            <h1 class="self-start mb-2 mt-5"><span class="text-sky-500">Social</span> Links</h1>
             <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
-              Resume &emsp;<i class="fa-solid fa-download"></i>
+              <i class="fa-solid fa-download"></i>&emsp;Resume
             </h1>
             <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
-              Linked In &emsp;<i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-github">&emsp;</i>Github
             </h1>
             <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
-              WhatsApp &emsp;<i class="fa-brands fa-solid fa-whatsapp"></i>
+              <a href="https://wa.me/916300052902?text=Hi, I'd like to connect!"
+                ><i class="fa-brands fa-solid fa-whatsapp"></i>&emsp;WhatsApp</a
+              >
+            </h1>
+            <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
+              <a href="https://wa.me/916300052902?text=Hi, I'd like to connect!"
+                ><i class="fa-brands fa-solid fa-hackerrank"></i>&emsp;Hacker Rank</a
+              >
             </h1>
           </div>
         </article>
@@ -988,15 +1185,14 @@
     </main>
     <footer class="p-10 md:mt-10 mb-10 md:mb-20 md:p-20 md:mb-10">
       <center>
-        <h1 class="text-xs md:text-lg text-gray-500">&copy; &nbsp; Sathvik Palivela - 2025</h1>
+        <h1 class="text-xs md:text-lg text-gray-500">&copy;&nbsp;Sathvik Palivela - 2025</h1>
         <p class="text-xs md:text-lg text-gray-500">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam commodi eum expedita ea cum
-          quisquam aut nisi soluta neque odio, exercitationem nostrum id eveniet cupiditate fugit
-          repellat quos autem voluptatum!
+          Email - <a href="mailto:sathvikpalivela0@gmail.com">sathvikpalivela0@gmail.com</a> |
+          Github -
+          <a href="https://github.com/SATHVIK-CONNECT">SATHVIK-CONNECT</a>
         </p>
         <p class="text-xs md:text-lg text-gray-500 hidden md:block">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam commodi eum expedita ea cum
-          quisquam aut nisi soluta neque odio, quos autem voluptatum!
+          Aspiring Software Developer | Designer | Problem Solver
         </p>
       </center>
     </footer>
@@ -1039,6 +1235,167 @@
           }
         });
       }
+      const carouselInner = document.querySelector(".image-carousel-inner");
+      const images = document.querySelectorAll(".image-carousel img");
+      const dots = document.querySelectorAll(".dot");
+      let currentIndex = 0;
+      let startX = 0;
+      let isDragging = false;
+
+      function goToImage(index) {
+        carouselInner.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+        updateDots();
+      }
+
+      function updateDots() {
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentIndex);
+        });
+      }
+
+      function autoScroll() {
+        currentIndex = (currentIndex + 1) % images.length;
+        goToImage(currentIndex);
+      }
+
+      // Swipe functionality
+      const carousel = document.querySelector(".image-carousel");
+      carousel.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+
+      carousel.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        const currentX = e.touches[0].clientX;
+        if (currentX - startX > 50) {
+          // Swipe right (previous image)
+          if (currentIndex > 0) {
+            goToImage(currentIndex - 1);
+          }
+          isDragging = false;
+        } else if (startX - currentX > 50) {
+          // Swipe left (next image)
+          if (currentIndex < images.length - 1) {
+            goToImage(currentIndex + 1);
+          }
+          isDragging = false;
+        }
+      });
+
+      carousel.addEventListener("touchend", () => {
+        isDragging = false;
+      });
+
+      // Auto-scroll every 5 seconds
+      setInterval(autoScroll, 5000);
+      document.addEventListener("DOMContentLoaded", () => {
+        const carousels = document.querySelectorAll(".image-carousel");
+
+        carousels.forEach((carousel) => {
+          const inner = carousel.querySelector(".image-carousel-inner");
+          const images = carousel.querySelectorAll("img");
+          const dots = carousel.querySelectorAll(".dot");
+
+          let currentIndex = 0;
+          let startX = 0;
+          let isDragging = false;
+
+          // 1. Function to navigate
+          function goToImage(index) {
+            if (index < 0) index = images.length - 1;
+            if (index >= images.length) index = 0;
+
+            currentIndex = index;
+            inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Update Dots
+            dots.forEach((dot, i) => {
+              dot.classList.toggle("active", i === currentIndex);
+            });
+          }
+
+          // 2. Click Dots Logic
+          dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+              goToImage(index);
+              resetAutoScroll(); // Stop and restart timer on manual click
+            });
+          });
+
+          // 3. Touch/Swipe Logic
+          carousel.addEventListener(
+            "touchstart",
+            (e) => {
+              startX = e.touches[0].clientX;
+              isDragging = true;
+            },
+            { passive: true }
+          );
+
+          carousel.addEventListener(
+            "touchmove",
+            (e) => {
+              if (!isDragging) return;
+              const currentX = e.touches[0].clientX;
+              const diff = startX - currentX;
+
+              if (Math.abs(diff) > 50) {
+                // Threshold for swipe
+                if (diff > 0) goToImage(currentIndex + 1); // Swipe Left
+                else goToImage(currentIndex - 1); // Swipe Right
+                isDragging = false;
+                resetAutoScroll();
+              }
+            },
+            { passive: true }
+          );
+
+          carousel.addEventListener("touchend", () => {
+            isDragging = false;
+          });
+
+          // 4. Auto Scroll Logic
+          let scrollInterval = setInterval(() => goToImage(currentIndex + 1), 5000);
+
+          function resetAutoScroll() {
+            clearInterval(scrollInterval);
+            scrollInterval = setInterval(() => goToImage(currentIndex + 1), 5000);
+          }
+        });
+      });
+
+      // Certificates Navigation
+      const links = document.querySelectorAll(".nav-link");
+      const indicator = document.getElementById("indicator");
+
+      function moveIndicator(element) {
+        // Get width and position relative to the nav container
+        indicator.style.width = `${element.offsetWidth}px`;
+        indicator.style.left = `${element.offsetLeft}px`;
+      }
+
+      // Initialize indicator on the first/active element
+      const activeElement = document.querySelector(".active2");
+      if (activeElement) moveIndicator(activeElement);
+
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Update active classes
+          links.forEach((l) => {
+            l.classList.remove("active2");
+            l.classList.add("text-gray-500");
+          });
+          link.classList.add("active2");
+          link.classList.remove("text-gray-500");
+
+          // Move the indicator
+          moveIndicator(link);
+        });
+      });
     </script>
   </body>
 </html>
