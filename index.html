@@ -41,7 +41,7 @@
           @apply w-full h-15 bg-black md:hidden text-lg font-bold p-5 text-sky-500 z-1;
         }
         .laptop-header {
-          @apply flex h-15 justify-between items-center fixed md:top-0 bottom-[-5px] w-full px-5 bg-black border-b border-gray-900 z-1;
+          @apply flex h-15 justify-between items-center fixed md:top-0 bottom-[-5px] w-full px-5 bg-black border-b border-gray-900 z-99;
         }
         .open {
           @apply px-5 py-2 bg-white w-30 rounded-3xl text-black font-bold mt-5 text-center hover:opacity-80 hover:ease-in hover:duration-200 md:text-[15px] flex justify-center items-center;
@@ -129,12 +129,12 @@
         article {
           @apply flex gap-10 flex-wrap md:flex-nowrap justify-center md:justify-start md:overflow-x-scroll md:p-10 rounded-xl;
           figure {
-            @apply flex justify-center border border-gray-500/30 rounded-xl overflow-hidden md:flex-col md:min-w-100 md:min-h-120 md:items-center md:justify-start md:hover:scale-110 md:hover:duration-300 md:hover:border-gray-500;
+            @apply flex justify-center border border-gray-800 rounded-xl overflow-hidden md:flex-col md:min-w-100 md:min-h-120 md:items-center md:justify-start md:hover:scale-102 md:hover:duration-300 md:hover:border-gray-500;
             img {
               @apply min-w-20 w-20 h-full object-contain bg-white md:w-[100%] md:h-[60%];
             }
             figcaption {
-              @apply px-3 py-2 overflow-hidden;
+              @apply px-3 py-2 md:pt-1 overflow-hidden;
               h3 {
                 @apply font-bold text-sm md:text-lg;
               }
@@ -142,9 +142,9 @@
                 @apply text-xs mt-1 md:text-[16px];
               }
               div {
-                @apply mt-4 overflow-x-scroll flex gap-3 py-2 md:px-2 md:flex-wrap;
+                @apply mt-4 md:mt-10 overflow-x-scroll flex gap-3 py-2 md:px-2 md:flex-wrap;
                 a {
-                  @apply text-white font-semibold px-3.5 py-1 rounded-full text-center text-xs min-w-auto  md:min-w-auto md:text-[15px] md:py-2 md:px-5 whitespace-nowrap md:text-shadow-lg text-shadow-sm;
+                  @apply text-white font-semibold px-3.5 py-1 rounded-full text-center text-xs min-w-auto  md:min-w-auto md:text-[15px] md:py-2 md:px-5 whitespace-nowrap md:text-shadow-sm;
                 }
               }
             }
@@ -156,11 +156,12 @@
           display: none;
         }
       }
+
       #section3 {
         article {
           @apply flex gap-10 flex-wrap justify-center;
           figure {
-            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 pb-4 md:hover:duration-300 md:hover:scale-110 md:hover:border-gray-500;
+            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 pb-4 md:hover:duration-300 md:hover:scale-102 md:hover:border-gray-500;
             img {
               @apply md:h-60 md:w-full;
             }
@@ -175,7 +176,7 @@
               nav {
                 @apply flex gap-2 md:gap-3 text-xs;
                 a {
-                  @apply px-3 py-2 bg-white rounded-3xl mt-5 text-black md:text-[15px] text-xs md:py-2 font-bold text-center hover:opacity-80 hover:ease-in hover:duration-200;
+                  @apply px-3 py-2 bg-white rounded-3xl mt-5 text-black md:text-[15px] text-xs md:py-2 font-bold text-center hover:opacity-80 hover:ease-in hover:duration-200 cursor-pointer;
                 }
               }
             }
@@ -186,7 +187,7 @@
         article {
           @apply flex gap-10 overflow-x-scroll;
           figure {
-            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 min-w-65 md:min-w-100 pb-4 md:hover:duration-300 md:hover:scale-110 md:hover:border-gray-500;
+            @apply rounded-2xl overflow-hidden border border-gray-800 md:w-100 min-w-65 md:min-w-100 pb-4 md:hover:duration-300 md:hover:scale-102 md:hover:border-gray-500;
             img {
               @apply md:h-60 h-40 md:w-full;
             }
@@ -263,7 +264,7 @@
     </style>
   </head>
   <body class="bg-black text-white md:text-3xl">
-    <header class="laptop-header">
+    <header class="laptop-header z-99">
       <h1>Sathvik's <span class="text-sky-500">Portfolio</span></h1>
       <nav id="navbar">
         <ul>
@@ -300,7 +301,7 @@
         </ul>
       </nav>
     </header>
-    <header class="mobile-header">Sathvik's <span class="text-white">Portfolio</span></header>
+    <header class="mobile-header z-99">Sathvik's <span class="text-white">Portfolio</span></header>
     <main>
       <section id="section1">
         <article>
@@ -316,17 +317,16 @@
               crafting clean, scalable solutions. I develop full-stack web projects, explore machine
               learning models, and create automation tools that solve real-world problems.
             </p>
-            <nav class="flex gap-3 md:gap-4 items-center">
+            <nav class="flex gap-2.5 md:gap-4 items-center">
               <a
                 href="#section5"
-                class="bg-sky-500 text-white text-xs md:text-lg px-4 py-2 min-w-30 rounded-3xl font-bold flex justify-center items-center"
+                class="bg-sky-500 text-white text-xs md:text-lg px-4 md:px-5 py-2 min-w-30 rounded-3xl font-bold flex justify-center items-center"
                 ><p>Say Hello</p>
                 &emsp;<i class="fa-solid fa-arrow-right"></i
               ></a>
               <a href="https://github.com/SATHVIK-CONNECT" target="_blank" class="link"
                 ><i class="fa-brands fa-github"></i
               ></a>
-
               <a
                 href="https://www.hackerrank.com/profile/sathvikpalivela0"
                 target="_blank"
@@ -334,11 +334,12 @@
                 ><i class="fa-brands fa-hackerrank"></i
               ></a>
               <a
-                href="https://www.hackerrank.com/profile/sathvikpalivela0"
+                href="https://learn.microsoft.com/en-in/users/sathvikpalivela-5018/"
                 target="_blank"
                 class="link"
-                ><i class="fa-brands fa-microsoft"></i></a
-              ><a href="https://www.linkedin.com/in/sathvikpalivela/" target="_blank" class="link"
+                ><i class="fa-brands fa-microsoft"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/sathvikpalivela/" target="_blank" class="link"
                 ><i class="fa-brands fa-linkedin"></i
               ></a>
               <a href="https://www.facebook.com/sathvik.Palivela.77" target="_blank" class="link"
@@ -346,9 +347,9 @@
               ></a>
             </nav>
           </div>
-          <div class="flex flex-col overflow-x-scroll">
+          <div class="flex flex-col overflow-x-scroll inactive">
             <h1 class="md:text-xl mb-3"><span class="text-sky-500">Sk</span>ills</h1>
-            <div class="flex overflow-x-scroll inactive">
+            <div class="flex overflow-x-scroll">
               <ul class="flex-center pr-4" style="animation: scroll 20s infinite linear">
                 <li>
                   <span
@@ -751,12 +752,12 @@
           </div>
         </article>
       </section>
-      <section id="section2">
+      <section id="section2" class="relative">
         <h1 class="text-center font-bold">
           <span class="text-sky-500">Certifi</span>cations and
           <span class="text-sky-500">Achieve</span>ments
         </h1>
-        <br class="hidden" />
+        <br class="md:hidden" />
         <center>
           <nav class="relative flex items-center gap-6 p-2 bg-white rounded-lg">
             <div
@@ -870,7 +871,26 @@
         <br />
         <article>
           <figure>
-            <img src="https://ik.imagekit.io/sathvik/src/Spark.jpg" loading="lazy" />
+            <img src="https://ik.imagekit.io/sathvik/images/Achieve.png" loading="lazy" />
+            <figcaption>
+              <h3>Achieve - Django</h3>
+              <p>
+                A quiz application developed with Django framework. Features user authentication and
+                score tracking.
+              </p>
+              <nav>
+                <a href="https://achieve-quiz.onrender.com/" class="open"
+                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                ><a href="https://github.com/SATHVIK-CONNECT/Achieve"
+                  ><i class="fa-brands fa-github"></i></a
+                ><a href="https://github.com/SATHVIK-CONNECT/Achieve/blob/main/README.md"
+                  ><i class="fa-solid fa-book"></i
+                ></a>
+              </nav>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="https://ik.imagekit.io/sathvik/images/Spark.png" loading="lazy" />
             <figcaption>
               <h3>Spark AI - Streamlit</h3>
               <p>
@@ -880,22 +900,11 @@
               <nav>
                 <a href="https://sathvik.streamlit.app" class="open"
                   >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
-                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
-              </nav>
-            </figcaption>
-          </figure>
-          <figure>
-            <img src="https://ik.imagekit.io/sathvik/src/Quiz.avif" loading="lazy" />
-            <figcaption>
-              <h3>Achieve - Django</h3>
-              <p>
-                A quiz application developed with Django framework. Features user authentication and
-                score tracking.
-              </p>
-              <nav>
-                <a href="https://sathvik.streamlit.app" class="open"
-                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
-                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
+                ><a href="https://github.com/SATHVIK-CONNECT/Project/tree/main"
+                  ><i class="fa-brands fa-github"></i></a
+                ><a href="https://github.com/SATHVIK-CONNECT/Project/blob/main/README.md"
+                  ><i class="fa-solid fa-book"></i
+                ></a>
               </nav>
             </figcaption>
           </figure>
@@ -908,39 +917,13 @@
                 cart, and payment integration.
               </p>
               <nav>
-                <a href="https://sathvik.streamlit.app" class="open"
+                <a href="https://flipkart-frontend-9uyq.vercel.app/" class="open"
                   >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
-                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
-              </nav>
-            </figcaption>
-          </figure>
-          <figure>
-            <img src="https://ik.imagekit.io/sathvik/src/Chatbot.webp" loading="lazy" />
-            <figcaption>
-              <h3>Chatbot - IBM</h3>
-              <p>
-                A conversational AI for customer support. Integrated with cloud services for
-                scalability.
-              </p>
-              <nav>
-                <a href="https://sathvik.streamlit.app" class="open"
-                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
-                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
-              </nav>
-            </figcaption>
-          </figure>
-          <figure>
-            <img src="https://ik.imagekit.io/sathvik/src/farma.png" loading="lazy" />
-            <figcaption>
-              <h3>Farma AI</h3>
-              <p>
-                AI model for identifying tree species from images. Uses computer vision and machine
-                learning algorithms.
-              </p>
-              <nav>
-                <a href="https://sathvik.streamlit.app" class="open"
-                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
-                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
+                ><a href="https://github.com/SATHVIK-CONNECT/flipkart-frontend"
+                  ><i class="fa-brands fa-github"></i></a
+                ><a href="https://github.com/SATHVIK-CONNECT/flipkart-frontend/blob/main/README.md"
+                  ><i class="fa-solid fa-book"></i
+                ></a>
               </nav>
             </figcaption>
           </figure>
@@ -953,9 +936,51 @@
                 responses and performance.
               </p>
               <nav>
-                <a href="https://sathvik.streamlit.app" class="open"
+                <a
+                  href="https://github.com/SATHVIK-CONNECT/Interview-Trainer-Agent/blob/main/Interview_Agent.ipynb"
+                  class="open"
                   >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
-                ><a><i class="fa-brands fa-github"></i></a><a><i class="fa-solid fa-link"></i></a>
+                ><a href="https://github.com/SATHVIK-CONNECT/Interview-Trainer-Agent"
+                  ><i class="fa-brands fa-github"></i></a
+                ><a
+                  href="https://github.com/SATHVIK-CONNECT/Interview-Trainer-Agent/blob/main/README.md"
+                  ><i class="fa-solid fa-book"></i
+                ></a>
+              </nav>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="https://ik.imagekit.io/sathvik/src/Chatbot.webp" loading="lazy" />
+            <figcaption>
+              <h3>Chatbot - IBM</h3>
+              <p>
+                A conversational AI for customer support. Integrated with cloud services for
+                scalability.
+              </p>
+              <nav>
+                <a href="https://github.com/SATHVIK-CONNECT" class="open"
+                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                ><a href="https://github.com/SATHVIK-CONNECT"><i class="fa-brands fa-github"></i></a
+                ><a href="https://github.com/SATHVIK-CONNECT"><i class="fa-solid fa-book"></i></a>
+              </nav>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="https://ik.imagekit.io/sathvik/src/farma.png" loading="lazy" />
+            <figcaption>
+              <h3>Farma AI</h3>
+              <p>
+                AI model for identifying tree species from images. Uses computer vision and machine
+                learning algorithms.
+              </p>
+              <nav>
+                <a href="https://sih-bley43d1q-sathviks-projects-2923d827.vercel.app/" class="open"
+                  >Open&emsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a
+                ><a href="https://github.com/SATHVIK-CONNECT/SIH"
+                  ><i class="fa-brands fa-github"></i></a
+                ><a href="https://github.com/SATHVIK-CONNECT/SIH/blob/main/README.md"
+                  ><i class="fa-solid fa-book"></i
+                ></a>
               </nav>
             </figcaption>
           </figure>
@@ -963,16 +988,15 @@
       </section>
       <section id="section4">
         <h1 class="text-center font-bold"><span class="text-sky-500">Eve</span>nts</h1>
-        <!-- <br /> -->
+        <br class="md:hidden" />
         <article>
-          <figure class="cards">
-            <!-- <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" loading="lazy" /> -->
+          <figure class="hidden">
             <div class="image-carousel">
               <div class="image-carousel-inner">
-                <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" alt="Image 1" loading="lazy" />
-                <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" alt="Image 2" loading="lazy" />
-                <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" alt="Image 3" loading="lazy" />
-                <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" alt="Image 4" loading="lazy" />
+                <img />
+                <img />
+                <img />
+                <img />
               </div>
               <div class="dots">
                 <div class="dot active"></div>
@@ -989,33 +1013,76 @@
                 workshops on building AI solutions and Copilots.
               </p>
               <nav>
-                <a href="" class="open">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
+                <a
+                  href="https://www.linkedin.com/posts/microsoft-events_microsoftaitour-activity-7282534416982159360-xfjL?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEtZnRABr9Ldr6McOWnxEQBVA6vi6EOk15k"
+                  class="open"
+                  >Open&emsp;<i class="fa-solid fa-paper-plane"></i
+                ></a>
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
                 <a href=""><i class="fa-solid fa-images"></i></a>
               </nav>
             </figcaption>
           </figure>
           <figure class="cards">
-            <!-- <img src="https://ik.imagekit.io/sathvik/eve-sih.jpeg" loading="lazy" /> -->
+            <div class="image-carousel">
+              <div class="image-carousel-inner">
+                <img src="https://ik.imagekit.io/sathvik/eve-ms.jpg" alt="Image 1" loading="lazy" />
+                <img src="https://ik.imagekit.io/sathvik/MS2.JPG" alt="Image 2" />
+                <img src="https://ik.imagekit.io/sathvik/MS7.jpg" alt="Image 3" />
+                <img
+                  src="https://ik.imagekit.io/sathvik/images/MS6.jpg"
+                  alt="Image 4"
+                  loading="lazy"
+                />
+              </div>
+              <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
+            <figcaption>
+              <h3>Microsoft Ai Tour</h3>
+              <p>
+                The Microsoft AI Tour in Bengaluru was an event that emphasized India's crucial role
+                in global AI innovation, featuring keynotes from CEO Satya Nadella and hands-on
+                workshops on building AI solutions and Copilots.
+              </p>
+              <nav>
+                <a
+                  href="https://www.linkedin.com/posts/microsoft-events_microsoftaitour-activity-7282534416982159360-xfjL?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEtZnRABr9Ldr6McOWnxEQBVA6vi6EOk15k"
+                  class="open"
+                  >Open&emsp;<i class="fa-solid fa-paper-plane"></i
+                ></a>
+                <a href="https://www.youtube.com/live/bYgP-tC5BFU?si=Z0S4-J4Rqp8JGJ5r"
+                  ><i class="fa-brands fa-youtube"></i
+                ></a>
+                <!-- <a href=""><i class="fa-solid fa-images"></i></a> -->
+              </nav>
+            </figcaption>
+          </figure>
+          <figure class="cards">
             <div class="image-carousel">
               <div class="image-carousel-inner">
                 <img
-                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  style="object-fit: contain; background: #fff"
+                  src="https://ik.imagekit.io/sathvik/images/DS1.png"
                   alt="Image 1"
                   loading="lazy"
                 />
                 <img
-                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  src="https://ik.imagekit.io/sathvik/images/DS2.jpeg"
                   alt="Image 2"
                   loading="lazy"
                 />
                 <img
-                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  src="https://ik.imagekit.io/sathvik/images/DS3.jpg"
                   alt="Image 3"
                   loading="lazy"
                 />
                 <img
-                  src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
+                  src="https://ik.imagekit.io/sathvik/images/DS4.jpeg"
                   alt="Image 4"
                   loading="lazy"
                 />
@@ -1030,28 +1097,74 @@
             <figcaption>
               <h3>Miracle Hackathon - Digital Summit 2025</h3>
               <p>
-                The Smart India Hackathon (SIH) is a nationwide initiative for students to solve
-                real-world problem statements provided by various government ministries and
-                industries.
+                At the Miracle Digital Summit 2025, I immersed myself in advanced workshops focused
+                on the future of scalable tech solutions. I collaborated with a diverse network of
+                innovators to explore emerging trends in decentralized web and smart automation.
+                This experience equipped me with cutting-edge strategies that I am now applying to
+                drive impactful digital results
               </p>
               <nav>
-                <a href="" class="open">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-                <a href=""><i class="fa-solid fa-images"></i></a>
+                <a
+                  href="https://www.linkedin.com/posts/susmitha-padala-6276982a1_citizenhack2025-digitalsummit25-techtalks-activity-7408869945121443842-e7Ey?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEtZnRABr9Ldr6McOWnxEQBVA6vi6EOk15k"
+                  class="open"
+                  >Open&emsp;<i class="fa-solid fa-paper-plane"></i
+                ></a>
+                <!-- <a href=""><i class="fa-brands fa-youtube"></i></a> -->
+                <a href="https://www.linkedin.com/company/digitalsummitvizag/"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
               </nav>
             </figcaption>
           </figure>
-
           <figure class="cards">
-            <!-- <img src="https://ik.imagekit.io/sathvik/eve-sih.jpeg" loading="lazy" /> -->
             <div class="image-carousel">
               <div class="image-carousel-inner">
                 <img
+                  src="https://ik.imagekit.io/sathvik/images/TS1.png"
+                  alt="Image 1"
+                  loading="lazy"
+                />
+                <!-- <img src="TS1.png" alt="Image 2" loading="lazy" />
+                <img src="TS1.png" alt="Image 3" loading="lazy" />
+                <img src="TS1.png" alt="Image 4" loading="lazy" /> -->
+              </div>
+              <!-- <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div> -->
+            </div>
+            <figcaption>
+              <h3>Tech Expo - Edunet Foundation</h3>
+              <p>
+                This event featured competitions encouraging students to develop problem-solving
+                skills and innovate with AI-driven solutions.
+              </p>
+              <nav>
+                <a
+                  href="https://www.linkedin.com/posts/edunetfoundation_techsaksham-mentorship-innovation-activity-7305481268664619009-0Ezy?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEtZnRABr9Ldr6McOWnxEQBVA6vi6EOk15k"
+                  class="open"
+                  >Open&emsp;<i class="fa-solid fa-paper-plane"></i
+                ></a>
+                <!-- <a href=""><i class="fa-brands fa-youtube"></i></a> -->
+                <a
+                  href="https://www.linkedin.com/posts/kakinada-institute-of-engineering-and-technology_techsaksham-innovationunleashed-futuretech-activity-7303798211176026112-BvXP?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEtZnRABr9Ldr6McOWnxEQBVA6vi6EOk15k"
+                  ><i class="fa-solid fa-images"></i
+                ></a>
+              </nav>
+            </figcaption>
+          </figure>
+          <figure class="cards">
+            <div class="image-carousel">
+              <div class="image-carousel-inner">
+                <img
+                  style="object-fit: contain; background: white"
                   src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
                   alt="Image 1"
                   loading="lazy"
                 />
-                <img
+                <!-- <img
                   src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
                   alt="Image 2"
                   loading="lazy"
@@ -1065,14 +1178,14 @@
                   src="https://ik.imagekit.io/sathvik/eve-sih.jpeg"
                   alt="Image 4"
                   loading="lazy"
-                />
+                /> -->
               </div>
-              <div class="dots">
+              <!-- <div class="dots">
                 <div class="dot active"></div>
                 <div class="dot"></div>
                 <div class="dot"></div>
                 <div class="dot"></div>
-              </div>
+              </div> -->
             </div>
             <figcaption>
               <h3>Smart India Hackathon</h3>
@@ -1082,14 +1195,18 @@
                 industries.
               </p>
               <nav>
-                <a href="" class="open">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-                <a href=""><i class="fa-solid fa-images"></i></a>
+                <a href="https://sih-bley43d1q-sathviks-projects-2923d827.vercel.app/" class="open"
+                  >Open&emsp;<i class="fa-solid fa-paper-plane"></i
+                ></a>
+                <!-- <a href=""><i class="fa-brands fa-youtube"></i></a> -->
+                <a
+                  href="https://www.canva.com/design/DAG0WcA-AUk/VjvEbn7CyN6KeHtvhIymGA/view?utm_content=DAG0WcA-AUk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=habf28f99c8"
+                  ><i class="fa-solid fa-link"></i
+                ></a>
               </nav>
             </figcaption>
           </figure>
           <figure class="cards">
-            <!-- <img src="https://ik.imagekit.io/sathvik/eve-rbi.avif" loading="lazy" /> -->
             <div class="image-carousel">
               <div class="image-carousel-inner">
                 <img
@@ -1097,27 +1214,25 @@
                   alt="Image 1"
                   loading="lazy"
                 />
+                <!-- <img src="RBI1.jpeg" alt="Image 2" loading="lazy" /> -->
                 <img
-                  src="https://ik.imagekit.io/sathvik/eve-rbi.avif"
-                  alt="Image 2"
-                  loading="lazy"
-                />
-                <img
-                  src="https://ik.imagekit.io/sathvik/eve-rbi.avif"
+                  src="https://ik.imagekit.io/sathvik/images/RBI1.jpg"
                   alt="Image 3"
                   loading="lazy"
                 />
                 <img
-                  src="https://ik.imagekit.io/sathvik/eve-rbi.avif"
+                  src="https://ik.imagekit.io/sathvik/images/RBI3.jpeg"
                   alt="Image 4"
                   loading="lazy"
                 />
+                <!-- <img src="RBI4.jpg" alt="Image 5" loading="lazy" /> -->
               </div>
               <div class="dots">
                 <div class="dot active"></div>
                 <div class="dot"></div>
                 <div class="dot"></div>
-                <div class="dot"></div>
+                <!-- <div class="dot"></div>
+                <div class="dot"></div> -->
               </div>
             </div>
             <figcaption>
@@ -1128,9 +1243,14 @@
                 90th anniversary.
               </p>
               <nav>
-                <a href="" class="open">Open&emsp;<i class="fa-solid fa-paper-plane"></i></a>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-                <a href=""><i class="fa-solid fa-images"></i></a>
+                <a
+                  href="https://www.linkedin.com/posts/shankar-yenni-265b04298_rbi90quiz-statelevel-participationcertificate-activity-7257610219747209216-EDQv?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEtZnRABr9Ldr6McOWnxEQBVA6vi6EOk15k"
+                  rel="noopener noreferrer"
+                  class="open"
+                  >Open&emsp;<i class="fa-solid fa-paper-plane"></i
+                ></a>
+                <!-- <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-solid fa-images"></i></a> -->
               </nav>
             </figcaption>
           </figure>
@@ -1141,33 +1261,41 @@
         <br />
         <article class="flex gap-10 flex-wrap justify-center">
           <form
+            action="https://api.web3forms.com/submit"
             class="flex flex-col gap-3 items-center justify-center w-100 md:border md:border-gray-500/20 md:rounded-4xl md:px-15 md:py-2"
             method="POST"
           >
             <h1 class="self-start mb-3 hidden md:block">
               <span class="text-sky-500">Mail</span> Me
             </h1>
+            <input type="hidden" name="access_key" value="26514a9d-c451-4631-aff1-1b30d6e4ac4f" />
+
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
             <textarea name="message" placeholder="Your Message" required></textarea>
             <div class="flex w-full gap-4 md:mt-4">
-              <button type="reset" class="bg-gray-700/20">
+              <button type="reset" class="bg-gray-700/20 cursor-pointer">
                 Clear&emsp;<i class="fa-solid fa-trash"></i>
               </button>
-              <button type="button" class="bg-white text-black">
+              <button type="submit" class="bg-white text-black cursor-pointer">
                 Send&emsp;<i class="fa-solid fa-share"></i>
               </button>
             </div>
           </form>
+
           <div
             class="hidden md:block px-15 py-2 md:flex md:flex-col md:gap-5 border border-gray-500/20 rounded-4xl h-100 w-100"
           >
             <h1 class="self-start mb-2 mt-5"><span class="text-sky-500">Social</span> Links</h1>
             <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
-              <i class="fa-solid fa-download"></i>&emsp;Resume
+              <a href="https://ik.imagekit.io/sathvik/Resume.pdf" download="Resume.pdf">
+                <i class="fa-solid fa-download"></i>&emsp;Resume</a
+              >
             </h1>
             <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
-              <i class="fa-brands fa-github">&emsp;</i>Github
+              <a href="https://github.com/SATHVIK-CONNECT"
+                ><i class="fa-brands fa-github">&emsp;</i>Github</a
+              >
             </h1>
             <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
               <a href="https://wa.me/916300052902?text=Hi, I'd like to connect!"
@@ -1175,7 +1303,7 @@
               >
             </h1>
             <h1 class="px-10 py-2 bg-white text-black rounded-full text-lg">
-              <a href="https://wa.me/916300052902?text=Hi, I'd like to connect!"
+              <a href="https://www.hackerrank.com/profile/sathvikpalivela0"
                 ><i class="fa-brands fa-solid fa-hackerrank"></i>&emsp;Hacker Rank</a
               >
             </h1>
@@ -1185,13 +1313,13 @@
     </main>
     <footer class="p-10 md:mt-10 mb-10 md:mb-20 md:p-20 md:mb-10">
       <center>
-        <h1 class="text-xs md:text-lg text-gray-500">&copy;&nbsp;Sathvik Palivela - 2025</h1>
-        <p class="text-xs md:text-lg text-gray-500">
+        <h1 class="text-[11px] md:text-lg text-gray-500">&copy;&nbsp;Sathvik Palivela - 2025</h1>
+        <p class="text-[9px] md:text-lg text-gray-500">
           Email - <a href="mailto:sathvikpalivela0@gmail.com">sathvikpalivela0@gmail.com</a> |
           Github -
           <a href="https://github.com/SATHVIK-CONNECT">SATHVIK-CONNECT</a>
         </p>
-        <p class="text-xs md:text-lg text-gray-500 hidden md:block">
+        <p class="text-[9px] md:text-lg text-gray-500">
           Aspiring Software Developer | Designer | Problem Solver
         </p>
       </center>
@@ -1235,61 +1363,7 @@
           }
         });
       }
-      const carouselInner = document.querySelector(".image-carousel-inner");
-      const images = document.querySelectorAll(".image-carousel img");
-      const dots = document.querySelectorAll(".dot");
-      let currentIndex = 0;
-      let startX = 0;
-      let isDragging = false;
 
-      function goToImage(index) {
-        carouselInner.style.transform = `translateX(-${index * 100}%)`;
-        currentIndex = index;
-        updateDots();
-      }
-
-      function updateDots() {
-        dots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === currentIndex);
-        });
-      }
-
-      function autoScroll() {
-        currentIndex = (currentIndex + 1) % images.length;
-        goToImage(currentIndex);
-      }
-
-      // Swipe functionality
-      const carousel = document.querySelector(".image-carousel");
-      carousel.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-      });
-
-      carousel.addEventListener("touchmove", (e) => {
-        if (!isDragging) return;
-        const currentX = e.touches[0].clientX;
-        if (currentX - startX > 50) {
-          // Swipe right (previous image)
-          if (currentIndex > 0) {
-            goToImage(currentIndex - 1);
-          }
-          isDragging = false;
-        } else if (startX - currentX > 50) {
-          // Swipe left (next image)
-          if (currentIndex < images.length - 1) {
-            goToImage(currentIndex + 1);
-          }
-          isDragging = false;
-        }
-      });
-
-      carousel.addEventListener("touchend", () => {
-        isDragging = false;
-      });
-
-      // Auto-scroll every 5 seconds
-      setInterval(autoScroll, 5000);
       document.addEventListener("DOMContentLoaded", () => {
         const carousels = document.querySelectorAll(".image-carousel");
 
@@ -1301,35 +1375,46 @@
           let currentIndex = 0;
           let startX = 0;
           let isDragging = false;
+          let scrollInterval;
 
-          // 1. Function to navigate
-          function goToImage(index) {
+          // Unified Navigation Function
+          const goToImage = (index) => {
+            // Handle infinite loop boundaries
             if (index < 0) index = images.length - 1;
-            if (index >= images.length) index = 0;
+            else if (index >= images.length) index = 0;
 
             currentIndex = index;
             inner.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-            // Update Dots
+            // Update Dots efficiently
             dots.forEach((dot, i) => {
               dot.classList.toggle("active", i === currentIndex);
             });
-          }
+          };
 
-          // 2. Click Dots Logic
+          // Auto Scroll Logic
+          const startAutoScroll = () => {
+            stopAutoScroll(); // Clear existing to prevent overlaps
+            scrollInterval = setInterval(() => goToImage(currentIndex + 1), 5000);
+          };
+
+          const stopAutoScroll = () => clearInterval(scrollInterval);
+
+          // Event Listeners: Dots
           dots.forEach((dot, index) => {
             dot.addEventListener("click", () => {
               goToImage(index);
-              resetAutoScroll(); // Stop and restart timer on manual click
+              startAutoScroll();
             });
           });
 
-          // 3. Touch/Swipe Logic
+          // Event Listeners: Touch/Swipe
           carousel.addEventListener(
             "touchstart",
             (e) => {
               startX = e.touches[0].clientX;
               isDragging = true;
+              stopAutoScroll(); // Pause auto-scroll while user interacts
             },
             { passive: true }
           );
@@ -1338,15 +1423,12 @@
             "touchmove",
             (e) => {
               if (!isDragging) return;
-              const currentX = e.touches[0].clientX;
-              const diff = startX - currentX;
+              const diff = startX - e.touches[0].clientX;
 
               if (Math.abs(diff) > 50) {
-                // Threshold for swipe
-                if (diff > 0) goToImage(currentIndex + 1); // Swipe Left
-                else goToImage(currentIndex - 1); // Swipe Right
+                goToImage(diff > 0 ? currentIndex + 1 : currentIndex - 1);
                 isDragging = false;
-                resetAutoScroll();
+                startAutoScroll();
               }
             },
             { passive: true }
@@ -1354,47 +1436,83 @@
 
           carousel.addEventListener("touchend", () => {
             isDragging = false;
+            if (!scrollInterval) startAutoScroll();
           });
 
-          // 4. Auto Scroll Logic
-          let scrollInterval = setInterval(() => goToImage(currentIndex + 1), 5000);
-
-          function resetAutoScroll() {
-            clearInterval(scrollInterval);
-            scrollInterval = setInterval(() => goToImage(currentIndex + 1), 5000);
-          }
+          // Initialize
+          startAutoScroll();
         });
       });
 
       // Certificates Navigation
-      const links = document.querySelectorAll(".nav-link");
-      const indicator = document.getElementById("indicator");
+      // const links = document.querySelectorAll(".nav-link");
+      // const indicator = document.getElementById("indicator");
 
-      function moveIndicator(element) {
-        // Get width and position relative to the nav container
-        indicator.style.width = `${element.offsetWidth}px`;
-        indicator.style.left = `${element.offsetLeft}px`;
-      }
+      // function moveIndicator(element) {
+      //   // Get width and position relative to the nav container
+      //   indicator.style.width = `${element.offsetWidth}px`;
+      //   indicator.style.left = `${element.offsetLeft}px`;
+      // }
 
-      // Initialize indicator on the first/active element
-      const activeElement = document.querySelector(".active2");
-      if (activeElement) moveIndicator(activeElement);
+      // // Initialize indicator on the first/active element
+      // const activeElement = document.querySelector(".active2");
+      // if (activeElement) moveIndicator(activeElement);
 
-      links.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
+      // links.forEach((link) => {
+      //   link.addEventListener("click", (e) => {
+      //     e.preventDefault();
 
-          // Update active classes
-          links.forEach((l) => {
-            l.classList.remove("active2");
-            l.classList.add("text-gray-500");
+      //     // Update active classes
+      //     links.forEach((l) => {
+      //       l.classList.remove("active2");
+      //       l.classList.add("text-gray-500");
+      //     });
+      //     link.classList.add("active2");
+      //     link.classList.remove("text-gray-500");
+
+      //     // Move the indicator
+      //     moveIndicator(link);
+      //   });
+      // });
+
+      //Form
+      const form = document.getElementById("form");
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        formData.append("access_key", "26514a9d-c451-4631-aff1-1b30d6e4ac4f");
+
+        const originalText = submitBtn.textContent;
+
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+
+        try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData,
           });
-          link.classList.add("active2");
-          link.classList.remove("text-gray-500");
 
-          // Move the indicator
-          moveIndicator(link);
-        });
+          const data = await response.json();
+
+          if (response.ok) {
+            alert("Success! Your message has been sent.");
+            form.reset();
+            setTimeout(() => {
+              window.location.replace("https://sathvik-profile.netlify.app/#section5");
+            }, 500);
+          } else {
+            alert("Error: " + data.message);
+          }
+        } catch (error) {
+          alert("Something went wrong. Please try again.");
+        } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
       });
     </script>
   </body>
